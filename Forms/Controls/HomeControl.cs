@@ -7,6 +7,7 @@ using XpressShare.Core;
 using XpressShare.Models;
 using XpressShare.Services;
 using XpressShare.Transfers;
+using XpressShare.Utilities;
 using TransferOptimizer = XpressShare.Services.TransferOptimizer;
 
 namespace XpressShare.Forms.Controls
@@ -30,9 +31,26 @@ namespace XpressShare.Forms.Controls
             base.OnLoad(e);
             if (DesignMode || LicenseManager.UsageMode == LicenseUsageMode.Designtime) return;
 
+            XpressShare.Controls.BufferedPanel.EnableDoubleBuffering(dgvRecentTransfers);
+
             RefreshComputerInfo();
             RefreshRecentTransfers();
             RefreshDevicesOnline();
+        }
+
+        public void ApplyDensity(int rowHeight)
+        {
+            try
+            {
+                dgvRecentTransfers.SuspendLayout();
+                dgvRecentTransfers.RowTemplate.Height = rowHeight;
+                foreach (DataGridViewRow r in dgvRecentTransfers.Rows)
+                {
+                    r.Height = rowHeight;
+                }
+                dgvRecentTransfers.ResumeLayout();
+            }
+            catch { }
         }
 
         public void RefreshComputerInfo()
@@ -41,6 +59,15 @@ namespace XpressShare.Forms.Controls
             {
                 lblValComputer.Text = Environment.MachineName;
                 lblValUser.Text = Environment.UserName;
+
+                lblValOs.Text = SystemEnvironmentInfo.OperatingSystemFriendlyName;
+                lblValBuild.Text = SystemEnvironmentInfo.BuildNumber;
+                lblValOsArch.Text = SystemEnvironmentInfo.OsArchitecture;
+
+                lblValAppArch.Text = SystemEnvironmentInfo.ProcessArchitecture;
+                lblValAppVersion.Text = SystemEnvironmentInfo.AppVersion;
+
+                lblValConnection.Text = TransferOptimizer.GetActiveConnectionType().ToString();
 
                 DeviceIdentity identity = ServiceRegistry.Resolve<DeviceIdentity>("DeviceIdentity");
                 if (identity != null && !string.IsNullOrEmpty(identity.LocalIpAddress))
@@ -52,9 +79,7 @@ namespace XpressShare.Forms.Controls
                     lblValIp.Text = "127.0.0.1";
                 }
 
-                lblValOs.Text = Environment.OSVersion.VersionString;
-                lblValConnection.Text = TransferOptimizer.GetActiveConnectionType().ToString();
-                lblValStatus.Text = "● Online (Ready to Share)";
+                lblValStatus.Text = "Online (Ready to Share)";
                 lblValStatus.ForeColor = Color.FromArgb(16, 185, 129);
             }
             catch (Exception ex)
@@ -96,7 +121,7 @@ namespace XpressShare.Forms.Controls
                     }
                     else
                     {
-                        dgvRecentTransfers.Rows[rowIndex].Cells[3].Style.ForeColor = Color.FromArgb(239, 68, 68);
+                        dgvRecentTransfers.Rows[rowIndex].Cells[3].Style.ForeColor = Color.FromArgb(224, 0, 0);
                     }
 
                     count++;
@@ -105,7 +130,7 @@ namespace XpressShare.Forms.Controls
                 if (count == 0)
                 {
                     dgvRecentTransfers.Rows.Add("(No recent file transfers)", "--", "--", "--", "--");
-                    dgvRecentTransfers.Rows[0].Cells[0].Style.ForeColor = Color.Gray;
+                    dgvRecentTransfers.Rows[0].Cells[0].Style.ForeColor = Color.FromArgb(128, 128, 128);
                 }
             }
             catch (Exception ex)
@@ -128,11 +153,11 @@ namespace XpressShare.Forms.Controls
                     var trusted = trustedService.GetTrustedDevices();
                     foreach (var t in trusted)
                     {
-                        ListViewItem item = new ListViewItem("● " + t.Name);
+                        ListViewItem item = new ListViewItem(t.Name);
                         item.SubItems.Add(!string.IsNullOrEmpty(t.IpAddress) ? t.IpAddress : "LAN");
                         item.SubItems.Add(string.IsNullOrEmpty(t.ConnectionType) ? "Ethernet" : t.ConnectionType);
-                        item.SubItems.Add("Trusted");
-                        item.ForeColor = Color.FromArgb(16, 185, 129);
+                        item.SubItems.Add("Online");
+                        item.ForeColor = Color.FromArgb(32, 32, 32);
                         listDevicesOnline.Items.Add(item);
                         onlineCount++;
                     }
@@ -140,15 +165,14 @@ namespace XpressShare.Forms.Controls
 
                 if (onlineCount == 0)
                 {
-                    ListViewItem item = new ListViewItem("○ Scanning local network for devices...");
-                    item.SubItems.Add("--");
-                    item.SubItems.Add("--");
-                    item.SubItems.Add("Discovering");
-                    item.ForeColor = Color.Gray;
-                    listDevicesOnline.Items.Add(item);
+                    lblDevicesCount.Text = "Scanning local network for devices...";
+                    lblDevicesCount.ForeColor = Color.FromArgb(80, 80, 80);
                 }
-
-                lblDevicesCount.Text = string.Format("{0} device(s) online", onlineCount);
+                else
+                {
+                    lblDevicesCount.Text = string.Format("{0} peer device(s) online", onlineCount);
+                    lblDevicesCount.ForeColor = Color.FromArgb(16, 185, 129);
+                }
             }
             catch (Exception ex)
             {

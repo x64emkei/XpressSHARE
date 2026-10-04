@@ -389,86 +389,86 @@ namespace XpressShare.Forms
             // 
             this.menuItemViewHome.Name = "menuItemViewHome";
             this.menuItemViewHome.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H)));
-            this.menuItemViewHome.Size = new System.Drawing.Size(214, 22);
-            this.menuItemViewHome.Text = "🏠 &Home";
+            this.menuItemViewHome.Size = new System.Drawing.Size(240, 22);
+            this.menuItemViewHome.Text = "&Home";
             this.menuItemViewHome.Click += new System.EventHandler(this.BtnNavHome_Click);
             // 
             // menuItemViewExplorer
             // 
             this.menuItemViewExplorer.Name = "menuItemViewExplorer";
             this.menuItemViewExplorer.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
-            this.menuItemViewExplorer.Size = new System.Drawing.Size(214, 22);
-            this.menuItemViewExplorer.Text = "📁 &Explorer";
+            this.menuItemViewExplorer.Size = new System.Drawing.Size(240, 22);
+            this.menuItemViewExplorer.Text = "&Explorer";
             this.menuItemViewExplorer.Click += new System.EventHandler(this.BtnNavExplorer_Click);
             // 
             // menuItemViewSend
             // 
             this.menuItemViewSend.Name = "menuItemViewSend";
-            this.menuItemViewSend.Size = new System.Drawing.Size(214, 22);
-            this.menuItemViewSend.Text = "📤 &Send";
+            this.menuItemViewSend.Size = new System.Drawing.Size(240, 22);
+            this.menuItemViewSend.Text = "&Send";
             this.menuItemViewSend.Click += new System.EventHandler(this.BtnNavSend_Click);
             // 
             // menuItemViewReceive
             // 
             this.menuItemViewReceive.Name = "menuItemViewReceive";
-            this.menuItemViewReceive.Size = new System.Drawing.Size(214, 22);
-            this.menuItemViewReceive.Text = "📥 &Receive";
+            this.menuItemViewReceive.Size = new System.Drawing.Size(240, 22);
+            this.menuItemViewReceive.Text = "&Receive";
             this.menuItemViewReceive.Click += new System.EventHandler(this.BtnNavReceive_Click);
             // 
             // menuItemViewTransfers
             // 
             this.menuItemViewTransfers.Name = "menuItemViewTransfers";
             this.menuItemViewTransfers.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
-            this.menuItemViewTransfers.Size = new System.Drawing.Size(214, 22);
-            this.menuItemViewTransfers.Text = "⇄ &Transfers";
+            this.menuItemViewTransfers.Size = new System.Drawing.Size(240, 22);
+            this.menuItemViewTransfers.Text = "&Transfers";
             this.menuItemViewTransfers.Click += new System.EventHandler(this.BtnNavTransfers_Click);
             // 
             // menuItemViewDevices
             // 
             this.menuItemViewDevices.Name = "menuItemViewDevices";
             this.menuItemViewDevices.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
-            this.menuItemViewDevices.Size = new System.Drawing.Size(214, 22);
-            this.menuItemViewDevices.Text = "💻 &Devices";
+            this.menuItemViewDevices.Size = new System.Drawing.Size(240, 22);
+            this.menuItemViewDevices.Text = "&Devices";
             this.menuItemViewDevices.Click += new System.EventHandler(this.BtnNavDevices_Click);
             // 
             // menuItemViewSettings
             // 
             this.menuItemViewSettings.Name = "menuItemViewSettings";
-            this.menuItemViewSettings.Size = new System.Drawing.Size(214, 22);
-            this.menuItemViewSettings.Text = "⚙ &Settings";
+            this.menuItemViewSettings.Size = new System.Drawing.Size(240, 22);
+            this.menuItemViewSettings.Text = "&Settings";
             this.menuItemViewSettings.Click += new System.EventHandler(this.BtnNavSettings_Click);
             // 
             // menuItemViewSep1
             // 
             this.menuItemViewSep1.Name = "menuItemViewSep1";
-            this.menuItemViewSep1.Size = new System.Drawing.Size(211, 6);
+            this.menuItemViewSep1.Size = new System.Drawing.Size(237, 6);
             // 
             // menuItemSinglePane
             // 
             this.menuItemSinglePane.Checked = true;
             this.menuItemSinglePane.CheckState = System.Windows.Forms.CheckState.Checked;
             this.menuItemSinglePane.Name = "menuItemSinglePane";
-            this.menuItemSinglePane.Size = new System.Drawing.Size(214, 22);
-            this.menuItemSinglePane.Text = "Single Pane Explorer";
+            this.menuItemSinglePane.Size = new System.Drawing.Size(240, 22);
+            this.menuItemSinglePane.Text = "Single Pane (Source Only)";
             this.menuItemSinglePane.Click += new System.EventHandler(this.MenuItemSinglePane_Click);
             // 
             // menuItemDualPane
             // 
             this.menuItemDualPane.Name = "menuItemDualPane";
-            this.menuItemDualPane.Size = new System.Drawing.Size(214, 22);
-            this.menuItemDualPane.Text = "Dual Pane (WinSCP Mode)";
+            this.menuItemDualPane.Size = new System.Drawing.Size(240, 22);
+            this.menuItemDualPane.Text = "Dual Pane (Source & Destination)";
             this.menuItemDualPane.Click += new System.EventHandler(this.MenuItemDualPane_Click);
             // 
             // menuItemViewSep2
             // 
             this.menuItemViewSep2.Name = "menuItemViewSep2";
-            this.menuItemViewSep2.Size = new System.Drawing.Size(211, 6);
+            this.menuItemViewSep2.Size = new System.Drawing.Size(237, 6);
             // 
             // menuItemRefresh
             // 
             this.menuItemRefresh.Name = "menuItemRefresh";
             this.menuItemRefresh.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.menuItemRefresh.Size = new System.Drawing.Size(214, 22);
+            this.menuItemRefresh.Size = new System.Drawing.Size(240, 22);
             this.menuItemRefresh.Text = "&Refresh";
             this.menuItemRefresh.Click += new System.EventHandler(this.BtnNavRefresh_Click);
             // 
@@ -478,7 +478,7 @@ namespace XpressShare.Forms
             this.menuItemThemeLight,
             this.menuItemThemeDark});
             this.menuItemAppearance.Name = "menuItemAppearance";
-            this.menuItemAppearance.Size = new System.Drawing.Size(214, 22);
+            this.menuItemAppearance.Size = new System.Drawing.Size(240, 22);
             this.menuItemAppearance.Text = "&Appearance";
             // 
             // menuItemThemeLight
@@ -712,7 +712,7 @@ namespace XpressShare.Forms
             this.colQueueSpeed,
             this.colQueueStatus});
             this.listTransferQueue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listTransferQueue.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listTransferQueue.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listTransferQueue.FullRowSelect = true;
             this.listTransferQueue.GridLines = true;
             this.listTransferQueue.HideSelection = false;
@@ -782,7 +782,7 @@ namespace XpressShare.Forms
             this.btnQueueOpenFolder.Name = "btnQueueOpenFolder";
             this.btnQueueOpenFolder.Size = new System.Drawing.Size(120, 24);
             this.btnQueueOpenFolder.TabIndex = 4;
-            this.btnQueueOpenFolder.Text = "📁 Open Downloads";
+            this.btnQueueOpenFolder.Text = "Open Downloads";
             this.btnQueueOpenFolder.UseVisualStyleBackColor = true;
             this.btnQueueOpenFolder.Click += new System.EventHandler(this.BtnQueueOpenFolder_Click);
             // 
@@ -929,14 +929,14 @@ namespace XpressShare.Forms
             this.btnNavSettings.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnNavSettings.FlatAppearance.BorderSize = 0;
             this.btnNavSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNavSettings.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNavSettings.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNavSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
-            this.btnNavSettings.Location = new System.Drawing.Point(0, 310);
+            this.btnNavSettings.Location = new System.Drawing.Point(0, 342);
             this.btnNavSettings.Name = "btnNavSettings";
-            this.btnNavSettings.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
-            this.btnNavSettings.Size = new System.Drawing.Size(205, 32);
+            this.btnNavSettings.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.btnNavSettings.Size = new System.Drawing.Size(205, 36);
             this.btnNavSettings.TabIndex = 11;
-            this.btnNavSettings.Text = "⚙   Settings";
+            this.btnNavSettings.Text = "Settings";
             this.btnNavSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNavSettings.UseVisualStyleBackColor = true;
             this.btnNavSettings.Click += new System.EventHandler(this.BtnNavSettings_Click);
@@ -944,12 +944,12 @@ namespace XpressShare.Forms
             // lblHeaderSystem
             // 
             this.lblHeaderSystem.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblHeaderSystem.Font = new System.Drawing.Font("Segoe UI", 7.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeaderSystem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(152)))), ((int)(((byte)(161)))));
-            this.lblHeaderSystem.Location = new System.Drawing.Point(0, 284);
+            this.lblHeaderSystem.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeaderSystem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(166)))), ((int)(((byte)(173)))));
+            this.lblHeaderSystem.Location = new System.Drawing.Point(0, 314);
             this.lblHeaderSystem.Name = "lblHeaderSystem";
-            this.lblHeaderSystem.Padding = new System.Windows.Forms.Padding(16, 4, 0, 0);
-            this.lblHeaderSystem.Size = new System.Drawing.Size(205, 26);
+            this.lblHeaderSystem.Padding = new System.Windows.Forms.Padding(18, 8, 0, 2);
+            this.lblHeaderSystem.Size = new System.Drawing.Size(205, 28);
             this.lblHeaderSystem.TabIndex = 10;
             this.lblHeaderSystem.Text = "SYSTEM";
             // 
@@ -957,7 +957,7 @@ namespace XpressShare.Forms
             // 
             this.panelSidebarDivider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(62)))), ((int)(((byte)(71)))));
             this.panelSidebarDivider.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSidebarDivider.Location = new System.Drawing.Point(0, 276);
+            this.panelSidebarDivider.Location = new System.Drawing.Point(0, 306);
             this.panelSidebarDivider.Name = "panelSidebarDivider";
             this.panelSidebarDivider.Size = new System.Drawing.Size(205, 8);
             this.panelSidebarDivider.TabIndex = 9;
@@ -968,14 +968,14 @@ namespace XpressShare.Forms
             this.btnNavDevices.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnNavDevices.FlatAppearance.BorderSize = 0;
             this.btnNavDevices.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNavDevices.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNavDevices.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNavDevices.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
-            this.btnNavDevices.Location = new System.Drawing.Point(0, 244);
+            this.btnNavDevices.Location = new System.Drawing.Point(0, 270);
             this.btnNavDevices.Name = "btnNavDevices";
-            this.btnNavDevices.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
-            this.btnNavDevices.Size = new System.Drawing.Size(205, 32);
+            this.btnNavDevices.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.btnNavDevices.Size = new System.Drawing.Size(205, 36);
             this.btnNavDevices.TabIndex = 8;
-            this.btnNavDevices.Text = "💻   Devices";
+            this.btnNavDevices.Text = "Devices";
             this.btnNavDevices.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNavDevices.UseVisualStyleBackColor = true;
             this.btnNavDevices.Click += new System.EventHandler(this.BtnNavDevices_Click);
@@ -983,12 +983,12 @@ namespace XpressShare.Forms
             // lblHeaderNetwork
             // 
             this.lblHeaderNetwork.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblHeaderNetwork.Font = new System.Drawing.Font("Segoe UI", 7.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeaderNetwork.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(152)))), ((int)(((byte)(161)))));
-            this.lblHeaderNetwork.Location = new System.Drawing.Point(0, 218);
+            this.lblHeaderNetwork.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeaderNetwork.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(166)))), ((int)(((byte)(173)))));
+            this.lblHeaderNetwork.Location = new System.Drawing.Point(0, 242);
             this.lblHeaderNetwork.Name = "lblHeaderNetwork";
-            this.lblHeaderNetwork.Padding = new System.Windows.Forms.Padding(16, 4, 0, 0);
-            this.lblHeaderNetwork.Size = new System.Drawing.Size(205, 26);
+            this.lblHeaderNetwork.Padding = new System.Windows.Forms.Padding(18, 8, 0, 2);
+            this.lblHeaderNetwork.Size = new System.Drawing.Size(205, 28);
             this.lblHeaderNetwork.TabIndex = 7;
             this.lblHeaderNetwork.Text = "NETWORK";
             // 
@@ -998,14 +998,14 @@ namespace XpressShare.Forms
             this.btnNavTransfers.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnNavTransfers.FlatAppearance.BorderSize = 0;
             this.btnNavTransfers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNavTransfers.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNavTransfers.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNavTransfers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
-            this.btnNavTransfers.Location = new System.Drawing.Point(0, 186);
+            this.btnNavTransfers.Location = new System.Drawing.Point(0, 206);
             this.btnNavTransfers.Name = "btnNavTransfers";
-            this.btnNavTransfers.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
-            this.btnNavTransfers.Size = new System.Drawing.Size(205, 32);
+            this.btnNavTransfers.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.btnNavTransfers.Size = new System.Drawing.Size(205, 36);
             this.btnNavTransfers.TabIndex = 6;
-            this.btnNavTransfers.Text = "⇄   Transfers";
+            this.btnNavTransfers.Text = "Transfers";
             this.btnNavTransfers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNavTransfers.UseVisualStyleBackColor = true;
             this.btnNavTransfers.Click += new System.EventHandler(this.BtnNavTransfers_Click);
@@ -1016,14 +1016,14 @@ namespace XpressShare.Forms
             this.btnNavReceive.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnNavReceive.FlatAppearance.BorderSize = 0;
             this.btnNavReceive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNavReceive.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNavReceive.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNavReceive.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
-            this.btnNavReceive.Location = new System.Drawing.Point(0, 154);
+            this.btnNavReceive.Location = new System.Drawing.Point(0, 170);
             this.btnNavReceive.Name = "btnNavReceive";
-            this.btnNavReceive.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
-            this.btnNavReceive.Size = new System.Drawing.Size(205, 32);
+            this.btnNavReceive.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.btnNavReceive.Size = new System.Drawing.Size(205, 36);
             this.btnNavReceive.TabIndex = 5;
-            this.btnNavReceive.Text = "📥   Receive";
+            this.btnNavReceive.Text = "Receive";
             this.btnNavReceive.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNavReceive.UseVisualStyleBackColor = true;
             this.btnNavReceive.Click += new System.EventHandler(this.BtnNavReceive_Click);
@@ -1034,14 +1034,14 @@ namespace XpressShare.Forms
             this.btnNavSend.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnNavSend.FlatAppearance.BorderSize = 0;
             this.btnNavSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNavSend.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNavSend.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNavSend.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
-            this.btnNavSend.Location = new System.Drawing.Point(0, 122);
+            this.btnNavSend.Location = new System.Drawing.Point(0, 134);
             this.btnNavSend.Name = "btnNavSend";
-            this.btnNavSend.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
-            this.btnNavSend.Size = new System.Drawing.Size(205, 32);
+            this.btnNavSend.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.btnNavSend.Size = new System.Drawing.Size(205, 36);
             this.btnNavSend.TabIndex = 4;
-            this.btnNavSend.Text = "📤   Send";
+            this.btnNavSend.Text = "Send";
             this.btnNavSend.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNavSend.UseVisualStyleBackColor = true;
             this.btnNavSend.Click += new System.EventHandler(this.BtnNavSend_Click);
@@ -1049,12 +1049,12 @@ namespace XpressShare.Forms
             // lblHeaderTransfer
             // 
             this.lblHeaderTransfer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblHeaderTransfer.Font = new System.Drawing.Font("Segoe UI", 7.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeaderTransfer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(152)))), ((int)(((byte)(161)))));
-            this.lblHeaderTransfer.Location = new System.Drawing.Point(0, 96);
+            this.lblHeaderTransfer.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeaderTransfer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(166)))), ((int)(((byte)(173)))));
+            this.lblHeaderTransfer.Location = new System.Drawing.Point(0, 106);
             this.lblHeaderTransfer.Name = "lblHeaderTransfer";
-            this.lblHeaderTransfer.Padding = new System.Windows.Forms.Padding(16, 4, 0, 0);
-            this.lblHeaderTransfer.Size = new System.Drawing.Size(205, 26);
+            this.lblHeaderTransfer.Padding = new System.Windows.Forms.Padding(18, 8, 0, 2);
+            this.lblHeaderTransfer.Size = new System.Drawing.Size(205, 28);
             this.lblHeaderTransfer.TabIndex = 3;
             this.lblHeaderTransfer.Text = "TRANSFER";
             // 
@@ -1064,14 +1064,14 @@ namespace XpressShare.Forms
             this.btnNavExplorer.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnNavExplorer.FlatAppearance.BorderSize = 0;
             this.btnNavExplorer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNavExplorer.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNavExplorer.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNavExplorer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
-            this.btnNavExplorer.Location = new System.Drawing.Point(0, 64);
+            this.btnNavExplorer.Location = new System.Drawing.Point(0, 70);
             this.btnNavExplorer.Name = "btnNavExplorer";
-            this.btnNavExplorer.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
-            this.btnNavExplorer.Size = new System.Drawing.Size(205, 32);
+            this.btnNavExplorer.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.btnNavExplorer.Size = new System.Drawing.Size(205, 36);
             this.btnNavExplorer.TabIndex = 2;
-            this.btnNavExplorer.Text = "📁   Explorer";
+            this.btnNavExplorer.Text = "Explorer";
             this.btnNavExplorer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNavExplorer.UseVisualStyleBackColor = true;
             this.btnNavExplorer.Click += new System.EventHandler(this.BtnNavExplorer_Click);
@@ -1082,14 +1082,14 @@ namespace XpressShare.Forms
             this.btnNavHome.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnNavHome.FlatAppearance.BorderSize = 0;
             this.btnNavHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNavHome.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNavHome.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNavHome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
-            this.btnNavHome.Location = new System.Drawing.Point(0, 32);
+            this.btnNavHome.Location = new System.Drawing.Point(0, 34);
             this.btnNavHome.Name = "btnNavHome";
-            this.btnNavHome.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
-            this.btnNavHome.Size = new System.Drawing.Size(205, 32);
+            this.btnNavHome.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.btnNavHome.Size = new System.Drawing.Size(205, 36);
             this.btnNavHome.TabIndex = 1;
-            this.btnNavHome.Text = "🏠   Home";
+            this.btnNavHome.Text = "Home";
             this.btnNavHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNavHome.UseVisualStyleBackColor = true;
             this.btnNavHome.Click += new System.EventHandler(this.BtnNavHome_Click);
@@ -1097,12 +1097,12 @@ namespace XpressShare.Forms
             // lblHeaderWorkspace
             // 
             this.lblHeaderWorkspace.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblHeaderWorkspace.Font = new System.Drawing.Font("Segoe UI", 7.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeaderWorkspace.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(152)))), ((int)(((byte)(161)))));
+            this.lblHeaderWorkspace.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeaderWorkspace.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(166)))), ((int)(((byte)(173)))));
             this.lblHeaderWorkspace.Location = new System.Drawing.Point(0, 6);
             this.lblHeaderWorkspace.Name = "lblHeaderWorkspace";
-            this.lblHeaderWorkspace.Padding = new System.Windows.Forms.Padding(16, 4, 0, 0);
-            this.lblHeaderWorkspace.Size = new System.Drawing.Size(205, 26);
+            this.lblHeaderWorkspace.Padding = new System.Windows.Forms.Padding(18, 8, 0, 2);
+            this.lblHeaderWorkspace.Size = new System.Drawing.Size(205, 28);
             this.lblHeaderWorkspace.TabIndex = 0;
             this.lblHeaderWorkspace.Text = "WORKSPACE";
             // 

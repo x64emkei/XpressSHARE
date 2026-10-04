@@ -135,6 +135,9 @@
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\BufferedPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Forms\Controls\HomeControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -257,6 +260,7 @@
     <Compile Include="Utilities\Crc32.cs" />
     <Compile Include="Utilities\PerformanceProfile.cs" />
     <Compile Include="Utilities\SystemCapabilities.cs" />
+    <Compile Include="Utilities\SystemEnvironmentInfo.cs" />
     <EmbeddedResource Include="Forms\InboxForm.resx">
       <DependentUpon>InboxForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -37,12 +37,29 @@ namespace XpressShare.Forms.Controls
             _discoveryService = new LanDiscoveryService();
             _discoveryService.DeviceDiscovered += DiscoveryService_DeviceDiscovered;
 
+            XpressShare.Controls.BufferedPanel.EnableDoubleBuffering(dgvDevices);
+
             if (_localIdentity != null)
             {
                 _discoveryService.Start(_localIdentity);
             }
 
             RefreshDevicesGrid();
+        }
+
+        public void ApplyDensity(int rowHeight)
+        {
+            try
+            {
+                dgvDevices.SuspendLayout();
+                dgvDevices.RowTemplate.Height = rowHeight;
+                foreach (DataGridViewRow r in dgvDevices.Rows)
+                {
+                    r.Height = rowHeight;
+                }
+                dgvDevices.ResumeLayout();
+            }
+            catch { }
         }
 
         private void DiscoveryService_DeviceDiscovered(object sender, DeviceDiscoveredEventArgs e)

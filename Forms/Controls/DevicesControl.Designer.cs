@@ -100,7 +100,7 @@ namespace XpressShare.Forms.Controls
             // lblSubtitle
             // 
             this.lblSubtitle.AutoSize = true;
-            this.lblSubtitle.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubtitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSubtitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
             this.lblSubtitle.Location = new System.Drawing.Point(15, 31);
             this.lblSubtitle.Name = "lblSubtitle";
@@ -136,7 +136,7 @@ namespace XpressShare.Forms.Controls
             // 
             this.lblDeviceCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDeviceCount.AutoSize = true;
-            this.lblDeviceCount.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeviceCount.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDeviceCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
             this.lblDeviceCount.Location = new System.Drawing.Point(680, 13);
             this.lblDeviceCount.Name = "lblDeviceCount";
@@ -149,7 +149,7 @@ namespace XpressShare.Forms.Controls
             // 
             this.btnRefreshTop.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
             this.btnRefreshTop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefreshTop.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefreshTop.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefreshTop.Location = new System.Drawing.Point(280, 6);
             this.btnRefreshTop.Name = "btnRefreshTop";
             this.btnRefreshTop.Size = new System.Drawing.Size(100, 28);
@@ -162,7 +162,7 @@ namespace XpressShare.Forms.Controls
             // 
             this.btnPairTop.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
             this.btnPairTop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPairTop.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPairTop.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPairTop.Location = new System.Drawing.Point(165, 6);
             this.btnPairTop.Name = "btnPairTop";
             this.btnPairTop.Size = new System.Drawing.Size(108, 28);
@@ -176,13 +176,13 @@ namespace XpressShare.Forms.Controls
             this.btnDiscover.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnDiscover.FlatAppearance.BorderSize = 0;
             this.btnDiscover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDiscover.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDiscover.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDiscover.ForeColor = System.Drawing.Color.White;
             this.btnDiscover.Location = new System.Drawing.Point(10, 6);
             this.btnDiscover.Name = "btnDiscover";
             this.btnDiscover.Size = new System.Drawing.Size(148, 28);
             this.btnDiscover.TabIndex = 0;
-            this.btnDiscover.Text = "🔍 Discover Devices";
+            this.btnDiscover.Text = "Discover Devices";
             this.btnDiscover.UseVisualStyleBackColor = false;
             this.btnDiscover.Click += new System.EventHandler(this.BtnDiscover_Click);
             // 
@@ -212,7 +212,7 @@ namespace XpressShare.Forms.Controls
             this.dgvDevices.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dgvCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dgvCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(245)))));
-            dgvCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dgvCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dgvCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
             dgvCellStyle1.Padding = new System.Windows.Forms.Padding(4, 2, 4, 2);
             dgvCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -230,7 +230,7 @@ namespace XpressShare.Forms.Controls
             this.colDevSeen});
             dgvCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dgvCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dgvCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dgvCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dgvCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
             dgvCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
             dgvCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
@@ -326,7 +326,7 @@ namespace XpressShare.Forms.Controls
             this.btnProperties.Enabled = false;
             this.btnProperties.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
             this.btnProperties.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProperties.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProperties.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProperties.Location = new System.Drawing.Point(828, 7);
             this.btnProperties.Name = "btnProperties";
             this.btnProperties.Size = new System.Drawing.Size(110, 28);
@@ -340,12 +340,12 @@ namespace XpressShare.Forms.Controls
             this.btnSendFile.Enabled = false;
             this.btnSendFile.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
             this.btnSendFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSendFile.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSendFile.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSendFile.Location = new System.Drawing.Point(220, 7);
             this.btnSendFile.Name = "btnSendFile";
             this.btnSendFile.Size = new System.Drawing.Size(130, 28);
             this.btnSendFile.TabIndex = 2;
-            this.btnSendFile.Text = "📤 Send File to Peer...";
+            this.btnSendFile.Text = "Send File...";
             this.btnSendFile.UseVisualStyleBackColor = true;
             this.btnSendFile.Click += new System.EventHandler(this.BtnSendFile_Click);
             // 
@@ -354,12 +354,12 @@ namespace XpressShare.Forms.Controls
             this.btnUnpair.Enabled = false;
             this.btnUnpair.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
             this.btnUnpair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUnpair.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUnpair.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUnpair.Location = new System.Drawing.Point(120, 7);
             this.btnUnpair.Name = "btnUnpair";
             this.btnUnpair.Size = new System.Drawing.Size(90, 28);
             this.btnUnpair.TabIndex = 1;
-            this.btnUnpair.Text = "🔓 Unpair";
+            this.btnUnpair.Text = "Unpair";
             this.btnUnpair.UseVisualStyleBackColor = true;
             this.btnUnpair.Click += new System.EventHandler(this.BtnUnpair_Click);
             // 
@@ -368,12 +368,12 @@ namespace XpressShare.Forms.Controls
             this.btnPair.Enabled = false;
             this.btnPair.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
             this.btnPair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPair.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPair.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPair.Location = new System.Drawing.Point(10, 7);
             this.btnPair.Name = "btnPair";
             this.btnPair.Size = new System.Drawing.Size(100, 28);
             this.btnPair.TabIndex = 0;
-            this.btnPair.Text = "🔗 Pair Selected";
+            this.btnPair.Text = "Pair Device";
             this.btnPair.UseVisualStyleBackColor = true;
             this.btnPair.Click += new System.EventHandler(this.BtnPair_Click);
             // 
@@ -386,7 +386,7 @@ namespace XpressShare.Forms.Controls
             this.Controls.Add(this.panelActions);
             this.Controls.Add(this.panelTopActions);
             this.Controls.Add(this.panelHeader);
-            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "DevicesControl";
             this.Size = new System.Drawing.Size(950, 620);
             this.panelHeader.ResumeLayout(false);

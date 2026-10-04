@@ -159,7 +159,7 @@ namespace XpressShare.Forms.Controls
             // lblSubtitle
             // 
             this.lblSubtitle.AutoSize = true;
-            this.lblSubtitle.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubtitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSubtitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
             this.lblSubtitle.Location = new System.Drawing.Point(15, 31);
             this.lblSubtitle.Name = "lblSubtitle";
@@ -221,7 +221,7 @@ namespace XpressShare.Forms.Controls
             // chkMinimizeToTray
             // 
             this.chkMinimizeToTray.AutoSize = true;
-            this.chkMinimizeToTray.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkMinimizeToTray.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkMinimizeToTray.Location = new System.Drawing.Point(15, 34);
             this.chkMinimizeToTray.Name = "chkMinimizeToTray";
             this.chkMinimizeToTray.Size = new System.Drawing.Size(269, 17);
@@ -250,7 +250,7 @@ namespace XpressShare.Forms.Controls
             this.btnBrowseDownload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBrowseDownload.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
             this.btnBrowseDownload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBrowseDownload.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBrowseDownload.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBrowseDownload.Location = new System.Drawing.Point(825, 48);
             this.btnBrowseDownload.Name = "btnBrowseDownload";
             this.btnBrowseDownload.Size = new System.Drawing.Size(75, 24);
@@ -272,7 +272,7 @@ namespace XpressShare.Forms.Controls
             // lblDownloadPath
             // 
             this.lblDownloadPath.AutoSize = true;
-            this.lblDownloadPath.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDownloadPath.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDownloadPath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
             this.lblDownloadPath.Location = new System.Drawing.Point(12, 28);
             this.lblDownloadPath.Name = "lblDownloadPath";
@@ -311,7 +311,7 @@ namespace XpressShare.Forms.Controls
             // 
             // numMaxConcurrent
             // 
-            this.numMaxConcurrent.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numMaxConcurrent.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numMaxConcurrent.Location = new System.Drawing.Point(180, 137);
             this.numMaxConcurrent.Maximum = new decimal(new int[] {
             8,
@@ -335,7 +335,7 @@ namespace XpressShare.Forms.Controls
             // lblMaxConcurrent
             // 
             this.lblMaxConcurrent.AutoSize = true;
-            this.lblMaxConcurrent.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaxConcurrent.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMaxConcurrent.Location = new System.Drawing.Point(12, 141);
             this.lblMaxConcurrent.Name = "lblMaxConcurrent";
             this.lblMaxConcurrent.Size = new System.Drawing.Size(147, 13);
@@ -347,7 +347,7 @@ namespace XpressShare.Forms.Controls
             this.chkRetryDisconnects.AutoSize = true;
             this.chkRetryDisconnects.Checked = true;
             this.chkRetryDisconnects.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkRetryDisconnects.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkRetryDisconnects.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkRetryDisconnects.Location = new System.Drawing.Point(15, 98);
             this.chkRetryDisconnects.Name = "chkRetryDisconnects";
             this.chkRetryDisconnects.Size = new System.Drawing.Size(262, 17);
@@ -358,7 +358,7 @@ namespace XpressShare.Forms.Controls
             // chkAutoAccept
             // 
             this.chkAutoAccept.AutoSize = true;
-            this.chkAutoAccept.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkAutoAccept.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkAutoAccept.Location = new System.Drawing.Point(15, 65);
             this.chkAutoAccept.Name = "chkAutoAccept";
             this.chkAutoAccept.Size = new System.Drawing.Size(268, 17);
@@ -371,7 +371,7 @@ namespace XpressShare.Forms.Controls
             this.chkOptimizeTransfers.AutoSize = true;
             this.chkOptimizeTransfers.Checked = true;
             this.chkOptimizeTransfers.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkOptimizeTransfers.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkOptimizeTransfers.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkOptimizeTransfers.Location = new System.Drawing.Point(15, 32);
             this.chkOptimizeTransfers.Name = "chkOptimizeTransfers";
             this.chkOptimizeTransfers.Size = new System.Drawing.Size(277, 17);
@@ -412,7 +412,7 @@ namespace XpressShare.Forms.Controls
             // cboInterface
             // 
             this.cboInterface.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboInterface.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboInterface.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboInterface.FormattingEnabled = true;
             this.cboInterface.Items.AddRange(new object[] {
             "All Active Adapters (Auto)",
@@ -426,7 +426,7 @@ namespace XpressShare.Forms.Controls
             // lblInterface
             // 
             this.lblInterface.AutoSize = true;
-            this.lblInterface.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInterface.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInterface.Location = new System.Drawing.Point(15, 118);
             this.lblInterface.Name = "lblInterface";
             this.lblInterface.Size = new System.Drawing.Size(107, 13);
@@ -435,7 +435,7 @@ namespace XpressShare.Forms.Controls
             // 
             // numTcpPort
             // 
-            this.numTcpPort.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numTcpPort.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numTcpPort.Location = new System.Drawing.Point(170, 75);
             this.numTcpPort.Maximum = new decimal(new int[] {
             65535,
@@ -459,7 +459,7 @@ namespace XpressShare.Forms.Controls
             // lblTcpPort
             // 
             this.lblTcpPort.AutoSize = true;
-            this.lblTcpPort.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTcpPort.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTcpPort.Location = new System.Drawing.Point(15, 77);
             this.lblTcpPort.Name = "lblTcpPort";
             this.lblTcpPort.Size = new System.Drawing.Size(99, 13);
@@ -468,7 +468,7 @@ namespace XpressShare.Forms.Controls
             // 
             // numUdpPort
             // 
-            this.numUdpPort.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numUdpPort.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numUdpPort.Location = new System.Drawing.Point(170, 36);
             numUdpPort.Maximum = new decimal(new int[] {
             65535,
@@ -492,7 +492,7 @@ namespace XpressShare.Forms.Controls
             // lblUdpPort
             // 
             this.lblUdpPort.AutoSize = true;
-            this.lblUdpPort.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUdpPort.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUdpPort.Location = new System.Drawing.Point(15, 38);
             this.lblUdpPort.Name = "lblUdpPort";
             this.lblUdpPort.Size = new System.Drawing.Size(113, 13);
@@ -529,7 +529,7 @@ namespace XpressShare.Forms.Controls
             // 
             this.btnRevokePaired.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
             this.btnRevokePaired.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRevokePaired.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRevokePaired.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRevokePaired.Location = new System.Drawing.Point(15, 78);
             this.btnRevokePaired.Name = "btnRevokePaired";
             this.btnRevokePaired.Size = new System.Drawing.Size(220, 30);
@@ -543,7 +543,7 @@ namespace XpressShare.Forms.Controls
             this.chkRememberPaired.AutoSize = true;
             this.chkRememberPaired.Checked = true;
             this.chkRememberPaired.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkRememberPaired.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkRememberPaired.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkRememberPaired.Location = new System.Drawing.Point(15, 36);
             this.chkRememberPaired.Name = "chkRememberPaired";
             this.chkRememberPaired.Size = new System.Drawing.Size(161, 17);
@@ -582,7 +582,7 @@ namespace XpressShare.Forms.Controls
             // rbDensityComfortable
             // 
             this.rbDensityComfortable.AutoSize = true;
-            this.rbDensityComfortable.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbDensityComfortable.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbDensityComfortable.Location = new System.Drawing.Point(220, 36);
             this.rbDensityComfortable.Name = "rbDensityComfortable";
             this.rbDensityComfortable.Size = new System.Drawing.Size(88, 17);
@@ -594,7 +594,7 @@ namespace XpressShare.Forms.Controls
             // 
             this.rbDensityStandard.AutoSize = true;
             this.rbDensityStandard.Checked = true;
-            this.rbDensityStandard.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbDensityStandard.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbDensityStandard.Location = new System.Drawing.Point(115, 36);
             this.rbDensityStandard.Name = "rbDensityStandard";
             this.rbDensityStandard.Size = new System.Drawing.Size(70, 17);
@@ -606,7 +606,7 @@ namespace XpressShare.Forms.Controls
             // rbDensityCompact
             // 
             this.rbDensityCompact.AutoSize = true;
-            this.rbDensityCompact.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbDensityCompact.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbDensityCompact.Location = new System.Drawing.Point(15, 36);
             this.rbDensityCompact.Name = "rbDensityCompact";
             this.rbDensityCompact.Size = new System.Drawing.Size(69, 17);
@@ -632,7 +632,7 @@ namespace XpressShare.Forms.Controls
             // rbThemeDark
             // 
             this.rbThemeDark.AutoSize = true;
-            this.rbThemeDark.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbThemeDark.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbThemeDark.Location = new System.Drawing.Point(115, 36);
             this.rbThemeDark.Name = "rbThemeDark";
             this.rbThemeDark.Size = new System.Drawing.Size(81, 17);
@@ -644,7 +644,7 @@ namespace XpressShare.Forms.Controls
             // 
             this.rbThemeLight.AutoSize = true;
             this.rbThemeLight.Checked = true;
-            this.rbThemeLight.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbThemeLight.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbThemeLight.Location = new System.Drawing.Point(15, 36);
             this.rbThemeLight.Name = "rbThemeLight";
             this.rbThemeLight.Size = new System.Drawing.Size(84, 17);
@@ -669,7 +669,7 @@ namespace XpressShare.Forms.Controls
             // 
             this.btnResetDefaults.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
             this.btnResetDefaults.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnResetDefaults.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResetDefaults.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnResetDefaults.Location = new System.Drawing.Point(16, 10);
             this.btnResetDefaults.Name = "btnResetDefaults";
             this.btnResetDefaults.Size = new System.Drawing.Size(120, 30);
@@ -702,7 +702,7 @@ namespace XpressShare.Forms.Controls
             this.Controls.Add(this.tabSettings);
             this.Controls.Add(this.panelFooter);
             this.Controls.Add(this.panelHeader);
-            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "SettingsControl";
             this.Size = new System.Drawing.Size(950, 620);
             this.panelHeader.ResumeLayout(false);

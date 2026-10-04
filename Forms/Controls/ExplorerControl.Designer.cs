@@ -22,6 +22,7 @@ namespace XpressShare.Forms.Controls
         private System.Windows.Forms.ToolStripButton btnActDelete;
         private System.Windows.Forms.ToolStripSeparator actSep1;
         private System.Windows.Forms.ToolStripButton btnActToggleDual;
+        private System.Windows.Forms.ToolStripButton btnActOrientation;
         private System.Windows.Forms.ToolStripDropDownButton btnActViewMode;
         private System.Windows.Forms.ToolStripMenuItem menuDetails;
         private System.Windows.Forms.ToolStripMenuItem menuList;
@@ -80,6 +81,7 @@ namespace XpressShare.Forms.Controls
             this.btnActDelete = new System.Windows.Forms.ToolStripButton();
             this.actSep1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnActToggleDual = new System.Windows.Forms.ToolStripButton();
+            this.btnActOrientation = new System.Windows.Forms.ToolStripButton();
             this.btnActViewMode = new System.Windows.Forms.ToolStripDropDownButton();
             this.menuDetails = new System.Windows.Forms.ToolStripMenuItem();
             this.menuList = new System.Windows.Forms.ToolStripMenuItem();
@@ -157,6 +159,7 @@ namespace XpressShare.Forms.Controls
             this.btnActDelete,
             this.actSep1,
             this.btnActToggleDual,
+            this.btnActOrientation,
             this.btnActViewMode});
             this.toolStripActions.Location = new System.Drawing.Point(0, 30);
             this.toolStripActions.Name = "toolStripActions";
@@ -176,12 +179,13 @@ namespace XpressShare.Forms.Controls
             // btnActSend
             // 
             this.btnActSend.Enabled = false;
-            this.btnActSend.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActSend.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActSend.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnActSend.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnActSend.Name = "btnActSend";
-            this.btnActSend.Size = new System.Drawing.Size(89, 22);
-            this.btnActSend.Text = "📤 Send To...";
+            this.btnActSend.Size = new System.Drawing.Size(185, 22);
+            this.btnActSend.Text = "Transfer (Source → Destination)";
+            this.btnActSend.ToolTipText = "Transfer selected files from Source to Destination";
             this.btnActSend.Click += new System.EventHandler(this.BtnActSend_Click);
             // 
             // btnActCopy
@@ -209,12 +213,23 @@ namespace XpressShare.Forms.Controls
             // 
             // btnActToggleDual
             // 
+            this.btnActToggleDual.Checked = true;
             this.btnActToggleDual.CheckOnClick = true;
             this.btnActToggleDual.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnActToggleDual.Name = "btnActToggleDual";
-            this.btnActToggleDual.Size = new System.Drawing.Size(107, 22);
-            this.btnActToggleDual.Text = "◫ Dual Pane (WinSCP)";
+            this.btnActToggleDual.Size = new System.Drawing.Size(175, 22);
+            this.btnActToggleDual.Text = "Dual Pane (Source & Destination)";
             this.btnActToggleDual.Click += new System.EventHandler(this.BtnActToggleDual_Click);
+            // 
+            // btnActOrientation
+            // 
+            this.btnActOrientation.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnActOrientation.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnActOrientation.Name = "btnActOrientation";
+            this.btnActOrientation.Size = new System.Drawing.Size(108, 22);
+            this.btnActOrientation.Text = "Layout: Left / Right";
+            this.btnActOrientation.ToolTipText = "Toggle layout orientation (Left/Right or Top/Bottom)";
+            this.btnActOrientation.Click += new System.EventHandler(this.BtnActOrientation_Click);
             // 
             // btnActViewMode
             // 
@@ -275,7 +290,7 @@ namespace XpressShare.Forms.Controls
             this.btnNavBack.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNavBack.Name = "btnNavBack";
             this.btnNavBack.Size = new System.Drawing.Size(23, 23);
-            this.btnNavBack.Text = "◀";
+            this.btnNavBack.Text = "Back";
             this.btnNavBack.ToolTipText = "Back";
             this.btnNavBack.Click += new System.EventHandler(this.BtnNavBack_Click);
             // 
@@ -286,7 +301,7 @@ namespace XpressShare.Forms.Controls
             this.btnNavForward.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNavForward.Name = "btnNavForward";
             this.btnNavForward.Size = new System.Drawing.Size(23, 23);
-            this.btnNavForward.Text = "▶";
+            this.btnNavForward.Text = "Forward";
             this.btnNavForward.ToolTipText = "Forward";
             this.btnNavForward.Click += new System.EventHandler(this.BtnNavForward_Click);
             // 
@@ -296,7 +311,7 @@ namespace XpressShare.Forms.Controls
             this.btnNavUp.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNavUp.Name = "btnNavUp";
             this.btnNavUp.Size = new System.Drawing.Size(23, 23);
-            this.btnNavUp.Text = "⬆";
+            this.btnNavUp.Text = "Up";
             this.btnNavUp.ToolTipText = "Up to Parent Directory";
             this.btnNavUp.Click += new System.EventHandler(this.BtnNavUp_Click);
             // 
@@ -305,7 +320,7 @@ namespace XpressShare.Forms.Controls
             this.btnNavRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.btnNavRefresh.Name = "btnNavRefresh";
             this.btnNavRefresh.Size = new System.Drawing.Size(23, 23);
-            this.btnNavRefresh.Text = "🔄";
+            this.btnNavRefresh.Text = "Refresh";
             this.btnNavRefresh.ToolTipText = "Refresh";
             this.btnNavRefresh.Click += new System.EventHandler(this.BtnNavRefresh_Click);
             // 
@@ -317,7 +332,7 @@ namespace XpressShare.Forms.Controls
             // txtAddress
             // 
             this.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtAddress.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddress.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(460, 26);
             this.txtAddress.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtAddress_KeyDown);
@@ -331,7 +346,7 @@ namespace XpressShare.Forms.Controls
             // 
             this.txtSearch.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(163)))), ((int)(((byte)(175)))));
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(180, 26);
@@ -355,7 +370,7 @@ namespace XpressShare.Forms.Controls
             // 
             this.splitPanes.Panel2.Controls.Add(this.listRemote);
             this.splitPanes.Panel2.Controls.Add(this.panelRemoteHeader);
-            this.splitPanes.Panel2Collapsed = true;
+            this.splitPanes.Panel2Collapsed = false;
             this.splitPanes.Size = new System.Drawing.Size(950, 536);
             this.splitPanes.SplitterDistance = 475;
             this.splitPanes.TabIndex = 1;
@@ -378,7 +393,7 @@ namespace XpressShare.Forms.Controls
             this.colLocalSize,
             this.colLocalStatus});
             this.listLocal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listLocal.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listLocal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listLocal.FullRowSelect = true;
             this.listLocal.GridLines = true;
             this.listLocal.HideSelection = false;
@@ -518,9 +533,9 @@ namespace XpressShare.Forms.Controls
             this.lblLocalHeaderTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
             this.lblLocalHeaderTitle.Location = new System.Drawing.Point(10, 8);
             this.lblLocalHeaderTitle.Name = "lblLocalHeaderTitle";
-            this.lblLocalHeaderTitle.Size = new System.Drawing.Size(107, 15);
+            this.lblLocalHeaderTitle.Size = new System.Drawing.Size(145, 15);
             this.lblLocalHeaderTitle.TabIndex = 0;
-            this.lblLocalHeaderTitle.Text = "Local Workstation";
+            this.lblLocalHeaderTitle.Text = "SOURCE: This Computer";
             // 
             // panelRemote
             // 
@@ -540,7 +555,7 @@ namespace XpressShare.Forms.Controls
             this.colRemoteSize,
             this.colRemoteStatus});
             this.listRemote.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listRemote.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listRemote.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listRemote.FullRowSelect = true;
             this.listRemote.GridLines = true;
             this.listRemote.HideSelection = false;
@@ -593,7 +608,7 @@ namespace XpressShare.Forms.Controls
             // 
             this.cboRemotePeer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboRemotePeer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboRemotePeer.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboRemotePeer.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboRemotePeer.FormattingEnabled = true;
             this.cboRemotePeer.Location = new System.Drawing.Point(-134, 5);
             this.cboRemotePeer.Name = "cboRemotePeer";
@@ -608,9 +623,9 @@ namespace XpressShare.Forms.Controls
             this.lblRemoteHeaderTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
             this.lblRemoteHeaderTitle.Location = new System.Drawing.Point(10, 8);
             this.lblRemoteHeaderTitle.Name = "lblRemoteHeaderTitle";
-            this.lblRemoteHeaderTitle.Size = new System.Drawing.Size(120, 15);
+            this.lblRemoteHeaderTitle.Size = new System.Drawing.Size(185, 15);
             this.lblRemoteHeaderTitle.TabIndex = 0;
-            this.lblRemoteHeaderTitle.Text = "Remote Peer / Target";
+            this.lblRemoteHeaderTitle.Text = "DESTINATION: Downloads Folder";
             // 
             // panelFooter
             // 
@@ -625,7 +640,7 @@ namespace XpressShare.Forms.Controls
             // lblStatusInfo
             // 
             this.lblStatusInfo.AutoSize = true;
-            this.lblStatusInfo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatusInfo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatusInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
             this.lblStatusInfo.Location = new System.Drawing.Point(8, 5);
             this.lblStatusInfo.Name = "lblStatusInfo";
@@ -641,7 +656,7 @@ namespace XpressShare.Forms.Controls
             this.Controls.Add(this.splitPanes);
             this.Controls.Add(this.panelFooter);
             this.Controls.Add(this.panelTopBars);
-            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "ExplorerControl";
             this.Size = new System.Drawing.Size(950, 620);
             this.panelTopBars.ResumeLayout(false);

@@ -13,6 +13,7 @@ using XpressShare.Forms.Controls;
 using XpressShare.Models;
 using XpressShare.Services;
 using XpressShare.Transfers;
+using XpressShare.Utilities;
 using TransferOptimizer = XpressShare.Services.TransferOptimizer;
 
 namespace XpressShare.Forms
@@ -72,6 +73,18 @@ namespace XpressShare.Forms
         private SettingsControl _settingsControl;
 
         private NavView _currentView = NavView.Home;
+        private UserControl _activeViewControl;
+        private Button _activeNavButton;
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000; // WS_EX_COMPOSITED: Double-buffers all child windows from bottom to top
+                return cp;
+            }
+        }
 
         // Drawer State
         private bool _isDrawerExpanded = false;
@@ -101,6 +114,17 @@ namespace XpressShare.Forms
 
         private void InitializeViews()
         {
+            this.Text = string.Format("XpressSHARE — {0}", SystemEnvironmentInfo.ProcessArchitecture);
+
+            // Double buffer container panels and queues
+            XpressShare.Controls.BufferedPanel.EnableDoubleBuffering(panelSidebar);
+            XpressShare.Controls.BufferedPanel.EnableDoubleBuffering(panelSidebarMenu);
+            XpressShare.Controls.BufferedPanel.EnableDoubleBuffering(panelWorkspaceWrapper);
+            XpressShare.Controls.BufferedPanel.EnableDoubleBuffering(panelContentContainer);
+            XpressShare.Controls.BufferedPanel.EnableDoubleBuffering(panelTransferDrawer);
+            XpressShare.Controls.BufferedPanel.EnableDoubleBuffering(panelDrawerBody);
+            XpressShare.Controls.BufferedPanel.EnableDoubleBuffering(listTransferQueue);
+
             // Instantiate major UserControls
             _homeControl = new HomeControl();
             _homeControl.Dock = DockStyle.Fill;
@@ -146,6 +170,18 @@ namespace XpressShare.Forms
             _settingsControl.Dock = DockStyle.Fill;
             _settingsControl.StatusMessageChanged += delegate(string msg) { UpdateStatus(msg); };
             _settingsControl.ThemeToggleRequested += delegate { ApplyCurrentTheme(); };
+            _settingsControl.DensityChanged += delegate(string d) { ApplyUiDensity(d); };
+
+            // Hide inactive controls initially
+            _explorerControl.Visible = false;
+            _sendControl.Visible = false;
+            _receiveControl.Visible = false;
+            _transfersControl.Visible = false;
+            _devicesControl.Visible = false;
+            _settingsControl.Visible = false;
+            _homeControl.Visible = true;
+            _activeViewControl = _homeControl;
+            _activeNavButton = btnNavHome;
 
             // Add all controls to content container
             panelContentContainer.Controls.Add(_homeControl);
@@ -190,7 +226,7 @@ namespace XpressShare.Forms
                     return;
                 }
 
-                lblBrandSubtitle.Text = string.Format("{0} • Online", Environment.MachineName);
+                lblBrandSubtitle.Text = string.Format("{0} • {1} • Online", Environment.MachineName, SystemEnvironmentInfo.ProcessArchitecture);
 
                 _transferManager = ServiceRegistry.Resolve<Services.TransferManager>("TransferManager");
                 if (_transferManager == null)
@@ -217,6 +253,7 @@ namespace XpressShare.Forms
                 // Theme
                 ThemeManager.ThemeChanged += OnThemeChanged;
                 ApplyCurrentTheme();
+                ApplyUiDensity(AppSettings.Instance.UiDensity);
 
                 // Start LAN discovery and listener if enabled
                 bool receiveEnabled = AppSettings.Instance.ReceiveEnabled;
@@ -257,98 +294,102 @@ namespace XpressShare.Forms
 
         public void NavigateToView(NavView view)
         {
+            if (_currentView == view && _activeViewControl != null && _activeViewControl.Visible)
+            {
+                return; // Already on this view, prevent redraw
+            }
+
             _currentView = view;
 
-            // Reset sidebar buttons
-            ResetSidebarButtonStyles();
-
-            // Hide all views first
-            _homeControl.Visible = false;
-            _explorerControl.Visible = false;
-            _sendControl.Visible = false;
-            _receiveControl.Visible = false;
-            _transfersControl.Visible = false;
-            _devicesControl.Visible = false;
-            _settingsControl.Visible = false;
-
-            Button activeButton = null;
+            UserControl targetControl = null;
+            Button targetButton = null;
+            string statusMsg = string.Empty;
 
             switch (view)
             {
                 case NavView.Home:
-                    _homeControl.Visible = true;
-                    _homeControl.BringToFront();
-                    _homeControl.RefreshComputerInfo();
-                    _homeControl.RefreshRecentTransfers();
-                    _homeControl.RefreshDevicesOnline();
-                    activeButton = btnNavHome;
-                    UpdateStatus("Workspace: Home Dashboard");
+                    targetControl = _homeControl;
+                    targetButton = btnNavHome;
+                    statusMsg = "Workspace: Home Dashboard";
                     break;
 
                 case NavView.Explorer:
-                    _explorerControl.Visible = true;
-                    _explorerControl.BringToFront();
-                    _explorerControl.PopulateRemotePeers();
-                    activeButton = btnNavExplorer;
-                    UpdateStatus("Workspace: File Explorer");
+                    targetControl = _explorerControl;
+                    targetButton = btnNavExplorer;
+                    statusMsg = "Workspace: File Explorer (SOURCE / DESTINATION)";
                     break;
 
                 case NavView.Send:
-                    _sendControl.Visible = true;
-                    _sendControl.BringToFront();
-                    _sendControl.RefreshPeersList();
-                    activeButton = btnNavSend;
-                    UpdateStatus("Transfer: Send Files");
+                    targetControl = _sendControl;
+                    targetButton = btnNavSend;
+                    statusMsg = "Transfer: Send Files";
                     break;
 
                 case NavView.Receive:
-                    _receiveControl.Visible = true;
-                    _receiveControl.BringToFront();
-                    _receiveControl.RefreshPendingApproval();
-                    _receiveControl.RefreshReceivedHistory();
-                    activeButton = btnNavReceive;
-                    UpdateStatus("Transfer: Receive Files & Approvals");
+                    targetControl = _receiveControl;
+                    targetButton = btnNavReceive;
+                    statusMsg = "Transfer: Receive Files & Approvals";
                     break;
 
                 case NavView.Transfers:
-                    _transfersControl.Visible = true;
-                    _transfersControl.BringToFront();
-                    _transfersControl.RefreshTransfers();
-                    activeButton = btnNavTransfers;
-                    UpdateStatus("Transfer: Stream Pipeline Management");
+                    targetControl = _transfersControl;
+                    targetButton = btnNavTransfers;
+                    statusMsg = "Transfer: Stream Pipeline Management";
                     break;
 
                 case NavView.Devices:
-                    _devicesControl.Visible = true;
-                    _devicesControl.BringToFront();
-                    _devicesControl.RefreshDevicesGrid();
-                    activeButton = btnNavDevices;
-                    UpdateStatus("Network: Device Discovery & Directory");
+                    targetControl = _devicesControl;
+                    targetButton = btnNavDevices;
+                    statusMsg = "Network: Device Discovery & Directory";
                     break;
 
                 case NavView.Settings:
-                    _settingsControl.Visible = true;
-                    _settingsControl.BringToFront();
-                    _settingsControl.LoadSettings();
-                    activeButton = btnNavSettings;
-                    UpdateStatus("System: Application Settings");
+                    targetControl = _settingsControl;
+                    targetButton = btnNavSettings;
+                    statusMsg = "System: Application Settings";
                     break;
             }
 
-            if (activeButton != null)
+            if (targetControl == null) return;
+
+            // Suspend layout on content container during transition
+            panelContentContainer.SuspendLayout();
+
+            UserControl previousControl = _activeViewControl;
+
+            // Make target visible and frontmost FIRST to prevent white/empty frame flashes
+            targetControl.Visible = true;
+            targetControl.BringToFront();
+            _activeViewControl = targetControl;
+
+            // Hide previous control after new page is frontmost
+            if (previousControl != null && previousControl != targetControl)
             {
-                SetActiveSidebarButton(activeButton);
+                previousControl.Visible = false;
             }
 
-            panelSidebarMenu.Invalidate(true);
+            panelContentContainer.ResumeLayout(false);
+
+            // Update only the two sidebar buttons whose states changed
+            if (_activeNavButton != null && _activeNavButton != targetButton)
+            {
+                SetSidebarButtonInactive(_activeNavButton);
+            }
+
+            if (targetButton != null)
+            {
+                SetSidebarButtonActive(targetButton);
+                _activeNavButton = targetButton;
+            }
+
+            if (!string.IsNullOrEmpty(statusMsg))
+            {
+                UpdateStatus(statusMsg);
+            }
         }
 
         private void ResetSidebarButtonStyles()
         {
-            Color defaultBg = Color.Transparent;
-            Color defaultFg = Color.FromArgb(217, 221, 225);
-            Font regularFont = new Font("Segoe UI", 9F, FontStyle.Regular);
-
             Button[] buttons = new Button[]
             {
                 btnNavHome, btnNavExplorer, btnNavSend, btnNavReceive, btnNavTransfers, btnNavDevices, btnNavSettings
@@ -356,19 +397,78 @@ namespace XpressShare.Forms
 
             foreach (Button b in buttons)
             {
-                b.BackColor = defaultBg;
-                b.ForeColor = defaultFg;
-                b.Font = regularFont;
-                b.Tag = null; // Tag == "ACTIVE" indicates selected state
+                SetSidebarButtonInactive(b);
             }
         }
 
-        private void SetActiveSidebarButton(Button b)
+        private void SetSidebarButtonActive(Button b)
         {
-            b.BackColor = Color.FromArgb(50, 56, 65);
+            if (b == null) return;
+            b.BackColor = Color.FromArgb(50, 57, 66);
             b.ForeColor = Color.White;
-            b.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            b.Font = new Font("Segoe UI", b.Font.Size, FontStyle.Bold);
             b.Tag = "ACTIVE";
+            b.Invalidate();
+        }
+
+        private void SetSidebarButtonInactive(Button b)
+        {
+            if (b == null) return;
+            b.BackColor = Color.Transparent;
+            b.ForeColor = Color.FromArgb(210, 215, 220);
+            b.Font = new Font("Segoe UI", b.Font.Size, FontStyle.Regular);
+            b.Tag = null;
+            b.Invalidate();
+        }
+
+        public void ApplyUiDensity(string density)
+        {
+            if (string.IsNullOrEmpty(density)) density = "Standard";
+            AppSettings.Instance.UiDensity = density;
+
+            this.SuspendLayout();
+
+            int sidebarBtnHeight = 36;
+            int sidebarPaddingLeft = 22;
+            float sidebarFontSize = 9.75f;
+            int gridRowHeight = 28;
+
+            if (density.Equals("Compact", StringComparison.OrdinalIgnoreCase))
+            {
+                sidebarBtnHeight = 30;
+                sidebarPaddingLeft = 18;
+                sidebarFontSize = 9f;
+                gridRowHeight = 22;
+            }
+            else if (density.Equals("Comfortable", StringComparison.OrdinalIgnoreCase))
+            {
+                sidebarBtnHeight = 42;
+                sidebarPaddingLeft = 26;
+                sidebarFontSize = 10.25f;
+                gridRowHeight = 34;
+            }
+
+            // Adjust sidebar button heights and padding
+            Button[] navButtons = new Button[]
+            {
+                btnNavHome, btnNavExplorer, btnNavSend, btnNavReceive, btnNavTransfers, btnNavDevices, btnNavSettings
+            };
+
+            foreach (Button btn in navButtons)
+            {
+                btn.Height = sidebarBtnHeight;
+                btn.Padding = new Padding(sidebarPaddingLeft, 0, 0, 0);
+                FontStyle style = "ACTIVE".Equals(btn.Tag) ? FontStyle.Bold : FontStyle.Regular;
+                btn.Font = new Font("Segoe UI", sidebarFontSize, style);
+            }
+
+            // Adjust row heights on active data grids
+            if (_homeControl != null) _homeControl.ApplyDensity(gridRowHeight);
+            if (_transfersControl != null) _transfersControl.ApplyDensity(gridRowHeight);
+            if (_devicesControl != null) _devicesControl.ApplyDensity(gridRowHeight);
+
+            this.ResumeLayout(true);
+            UpdateStatus("UI Density set to " + density + ".");
         }
 
         private void SidebarButton_Paint(object sender, PaintEventArgs e)
@@ -376,10 +476,10 @@ namespace XpressShare.Forms
             Button btn = sender as Button;
             if (btn != null && "ACTIVE".Equals(btn.Tag))
             {
-                // Draw 3px red accent indicator on the left
+                // Draw 4px crisp primary red accent indicator on the left
                 using (Brush redBrush = new SolidBrush(Color.FromArgb(224, 0, 0)))
                 {
-                    e.Graphics.FillRectangle(redBrush, 0, 0, 3, btn.Height);
+                    e.Graphics.FillRectangle(redBrush, 0, 0, 4, btn.Height);
                 }
             }
         }
@@ -458,7 +558,7 @@ namespace XpressShare.Forms
                 _transferManager.ApproveTransfer(e.Session.SessionId);
                 UpdateStatus("Approved incoming transfer: " + e.Session.FileName);
                 RefreshDrawerTransfers();
-                btnNavReceive.Text = "📥   Receive";
+                btnNavReceive.Text = "Receive";
             }
         }
 
@@ -469,7 +569,7 @@ namespace XpressShare.Forms
                 _transferManager.RejectTransfer(e.Session.SessionId);
                 UpdateStatus("Rejected incoming transfer: " + e.Session.FileName);
                 RefreshDrawerTransfers();
-                btnNavReceive.Text = "📥   Receive";
+                btnNavReceive.Text = "Receive";
             }
         }
 
@@ -500,7 +600,7 @@ namespace XpressShare.Forms
 
             // Update ReceiveControl pending session
             _receiveControl.SetPendingTransfer(e.Session);
-            btnNavReceive.Text = "📥   Receive (1)";
+            btnNavReceive.Text = "Receive (1)";
             ExpandDrawer();
             RefreshDrawerTransfers();
             UpdateStatus("Incoming transfer requested from " + e.Session.RemoteDeviceName);
@@ -700,7 +800,7 @@ namespace XpressShare.Forms
             listTransferQueue.EndUpdate();
 
             // Update sidebar badge
-            btnNavTransfers.Text = activeCount > 0 ? string.Format("⇄   Transfers ({0})", activeCount) : "⇄   Transfers";
+            btnNavTransfers.Text = activeCount > 0 ? string.Format("Transfers ({0})", activeCount) : "Transfers";
 
             // Update drawer status text
             if (activeCount > 0)
@@ -778,6 +878,8 @@ namespace XpressShare.Forms
 
         private void ApplyCurrentTheme()
         {
+            this.SuspendLayout();
+
             ThemeManager.ApplyTheme(this);
 
             bool isDark = ThemeManager.IsDarkMode;
@@ -786,12 +888,20 @@ namespace XpressShare.Forms
 
             Color sidebarBg = isDark ? Color.FromArgb(24, 27, 31) : Color.FromArgb(37, 42, 48);
             panelSidebar.BackColor = sidebarBg;
+            panelSidebarMenu.BackColor = sidebarBg;
             panelSidebarBrand.BackColor = isDark ? Color.FromArgb(18, 20, 24) : Color.FromArgb(28, 32, 37);
 
             Color listBg = isDark ? Color.FromArgb(30, 34, 39) : Color.White;
-            Color listFg = isDark ? Color.FromArgb(243, 244, 246) : Color.FromArgb(17, 24, 39);
+            Color listFg = isDark ? Color.FromArgb(243, 244, 246) : Color.FromArgb(37, 42, 48);
             listTransferQueue.BackColor = listBg;
             listTransferQueue.ForeColor = listFg;
+
+            if (_activeNavButton != null)
+            {
+                SetSidebarButtonActive(_activeNavButton);
+            }
+
+            this.ResumeLayout(true);
         }
 
         private void MenuItemThemeLight_Click(object sender, EventArgs e)

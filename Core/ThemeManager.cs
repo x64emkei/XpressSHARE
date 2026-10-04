@@ -88,7 +88,17 @@ namespace XpressShare.Core
 
         public static Color SidebarColor
         {
-            get { return IsDarkMode ? Color.FromArgb(17, 19, 23) : Color.FromArgb(27, 31, 38); }
+            get { return IsDarkMode ? Color.FromArgb(17, 19, 23) : Color.FromArgb(37, 42, 48); }
+        }
+
+        public static Color SecondaryButtonColor
+        {
+            get { return IsDarkMode ? Color.FromArgb(45, 48, 55) : Color.FromArgb(243, 244, 246); }
+        }
+
+        public static Color SecondaryButtonTextColor
+        {
+            get { return IsDarkMode ? Color.FromArgb(242, 242, 242) : Color.FromArgb(37, 42, 48); }
         }
 
         public static void ApplyTheme(Form form)
@@ -99,6 +109,18 @@ namespace XpressShare.Core
             form.ForeColor = TextColor;
 
             ApplyThemeRecursive(form);
+        }
+
+        public static bool IsSidebarControl(Control c)
+        {
+            Control cur = c;
+            while (cur != null)
+            {
+                if (cur.Name == "panelSidebar" || cur.Name == "panelSidebarMenu" || cur.Name == "panelSidebarBrand" || (cur.Tag as string) == "Sidebar")
+                    return true;
+                cur = cur.Parent;
+            }
+            return false;
         }
 
         private static void ApplyThemeRecursive(Control parent)
@@ -112,6 +134,50 @@ namespace XpressShare.Core
                     continue;
                 }
 
+                if (IsSidebarControl(c))
+                {
+                    if (c is Panel)
+                    {
+                        Panel p = (Panel)c;
+                        if (p.Name == "panelSidebarBrand")
+                            p.BackColor = IsDarkMode ? Color.FromArgb(18, 20, 24) : Color.FromArgb(28, 32, 37);
+                        else if (p.Name == "panelBrandRedAccent")
+                            p.BackColor = AccentRed;
+                        else if (p.Name == "panelSidebarDivider")
+                            p.BackColor = IsDarkMode ? Color.FromArgb(40, 45, 52) : Color.FromArgb(55, 62, 71);
+                        else
+                            p.BackColor = SidebarColor;
+                    }
+                    else if (c is Label)
+                    {
+                        Label lbl = (Label)c;
+                        if (lbl.Name == "lblBrandName")
+                            lbl.ForeColor = Color.White;
+                        else
+                            lbl.ForeColor = Color.FromArgb(160, 166, 173);
+                    }
+                    else if (c is Button)
+                    {
+                        Button btn = (Button)c;
+                        if ("ACTIVE".Equals(btn.Tag))
+                        {
+                            btn.BackColor = Color.FromArgb(50, 57, 66);
+                            btn.ForeColor = Color.White;
+                        }
+                        else
+                        {
+                            btn.BackColor = Color.Transparent;
+                            btn.ForeColor = Color.FromArgb(210, 215, 220);
+                        }
+                    }
+
+                    if (c.HasChildren)
+                    {
+                        ApplyThemeRecursive(c);
+                    }
+                    continue;
+                }
+
                 if (c is Panel)
                 {
                     Panel p = (Panel)c;
@@ -119,11 +185,6 @@ namespace XpressShare.Core
                     {
                         p.BackColor = HeaderColor;
                         p.ForeColor = Color.White;
-                    }
-                    else if (p.Name == "panelSidebar" || tag == "Sidebar")
-                    {
-                        p.BackColor = SidebarColor;
-                        p.ForeColor = TextColor;
                     }
                     else if (p.Name == "panelDropZone")
                     {
@@ -138,38 +199,35 @@ namespace XpressShare.Core
                 else if (c is Button)
                 {
                     Button btn = (Button)c;
-                    if (tag != "NavActive")
+                    if (tag == "PrimaryAction")
                     {
-                        if (tag == "PrimaryAction")
-                        {
-                            btn.BackColor = ButtonColor;
-                            btn.ForeColor = ButtonTextColor;
-                            btn.FlatAppearance.BorderColor = BorderColor;
-                        }
-                        else if (tag != "Nav")
-                        {
-                            btn.BackColor = ButtonColor;
-                            btn.ForeColor = ButtonTextColor;
-                            btn.FlatAppearance.BorderColor = BorderColor;
-                        }
+                        btn.BackColor = AccentRed;
+                        btn.ForeColor = Color.White;
+                        btn.FlatAppearance.BorderColor = AccentRed;
+                    }
+                    else
+                    {
+                        btn.BackColor = SecondaryButtonColor;
+                        btn.ForeColor = SecondaryButtonTextColor;
+                        btn.FlatAppearance.BorderColor = BorderColor;
                     }
                 }
                 else if (c is TextBox)
                 {
                     TextBox txt = (TextBox)c;
-                    txt.BackColor = SecondaryPanelColor;
+                    txt.BackColor = IsDarkMode ? Color.FromArgb(24, 27, 31) : Color.White;
                     txt.ForeColor = TextColor;
                 }
                 else if (c is NumericUpDown)
                 {
                     NumericUpDown num = (NumericUpDown)c;
-                    num.BackColor = SecondaryPanelColor;
+                    num.BackColor = IsDarkMode ? Color.FromArgb(24, 27, 31) : Color.White;
                     num.ForeColor = TextColor;
                 }
                 else if (c is ComboBox)
                 {
                     ComboBox cbo = (ComboBox)c;
-                    cbo.BackColor = SecondaryPanelColor;
+                    cbo.BackColor = IsDarkMode ? Color.FromArgb(24, 27, 31) : Color.White;
                     cbo.ForeColor = TextColor;
                 }
                 else if (c is ListView)
@@ -178,17 +236,29 @@ namespace XpressShare.Core
                     lv.BackColor = PanelColor;
                     lv.ForeColor = TextColor;
                 }
+                else if (c is DataGridView)
+                {
+                    DataGridView dgv = (DataGridView)c;
+                    dgv.BackgroundColor = PanelColor;
+                    dgv.DefaultCellStyle.BackColor = PanelColor;
+                    dgv.DefaultCellStyle.ForeColor = TextColor;
+                }
                 else if (c is CheckBox)
                 {
                     CheckBox chk = (CheckBox)c;
                     chk.ForeColor = TextColor;
+                }
+                else if (c is RadioButton)
+                {
+                    RadioButton rb = (RadioButton)c;
+                    rb.ForeColor = TextColor;
                 }
                 else if (c is Label)
                 {
                     Label lbl = (Label)c;
                     if (tag == "HeaderTitle")
                     {
-                        lbl.ForeColor = Color.White;
+                        lbl.ForeColor = TextColor;
                     }
                     else if (tag == "Accent")
                     {
@@ -210,13 +280,13 @@ namespace XpressShare.Core
                 else if (c is MenuStrip)
                 {
                     MenuStrip ms = (MenuStrip)c;
-                    ms.BackColor = PanelColor;
+                    ms.BackColor = SecondaryPanelColor;
                     ms.ForeColor = TextColor;
                 }
                 else if (c is StatusStrip)
                 {
                     StatusStrip ss = (StatusStrip)c;
-                    ss.BackColor = PanelColor;
+                    ss.BackColor = SecondaryPanelColor;
                     ss.ForeColor = SecondaryTextColor;
                 }
 

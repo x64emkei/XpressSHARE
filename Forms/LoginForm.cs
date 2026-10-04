@@ -18,6 +18,7 @@ namespace XpressShare.Forms
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
+            if (DesignMode || (System.ComponentModel.LicenseManager.UsageMode == System.ComponentModel.LicenseUsageMode.Designtime)) return;
 
             ThemeManager.ApplyTheme(this);
             chkRememberMe.Checked = AppSettings.Instance.RememberMe;

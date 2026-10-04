@@ -30,6 +30,30 @@ namespace XpressShare.Forms.Controls
             if (DesignMode || LicenseManager.UsageMode == LicenseUsageMode.Designtime) return;
 
             txtDownloadPath.Text = AppSettings.Instance.SelectedDownloadFolder;
+            txtDownloadPath.Leave += delegate
+            {
+                string path = txtDownloadPath.Text.Trim();
+                if (!string.IsNullOrEmpty(path))
+                {
+                    AppSettings.Instance.SelectedDownloadFolder = path;
+                    AppSettings.Instance.Save();
+                }
+            };
+            txtDownloadPath.KeyDown += delegate(object s, KeyEventArgs ke)
+            {
+                if (ke.KeyCode == Keys.Enter)
+                {
+                    string path = txtDownloadPath.Text.Trim();
+                    if (!string.IsNullOrEmpty(path))
+                    {
+                        AppSettings.Instance.SelectedDownloadFolder = path;
+                        AppSettings.Instance.Save();
+                        NotifyStatus("Download location saved.");
+                    }
+                    ke.Handled = true;
+                    ke.SuppressKeyPress = true;
+                }
+            };
             chkAutoAccept.Checked = AppSettings.Instance.AutoAcceptTransfers;
             chkEnableListener.Checked = AppSettings.Instance.ReceiveEnabled;
 

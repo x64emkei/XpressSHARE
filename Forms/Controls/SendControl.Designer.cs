@@ -120,7 +120,7 @@ namespace XpressShare.Forms.Controls
             // lblSubtitle
             // 
             this.lblSubtitle.AutoSize = true;
-            this.lblSubtitle.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubtitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSubtitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
             this.lblSubtitle.Location = new System.Drawing.Point(15, 31);
             this.lblSubtitle.Name = "lblSubtitle";
@@ -180,7 +180,7 @@ namespace XpressShare.Forms.Controls
             this.colFileSize,
             this.colFileStatus});
             this.listFiles.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listFiles.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listFiles.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listFiles.FullRowSelect = true;
             this.listFiles.GridLines = true;
             this.listFiles.Location = new System.Drawing.Point(3, 55);
@@ -229,7 +229,7 @@ namespace XpressShare.Forms.Controls
             // 
             this.lblFileSummary.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFileSummary.AutoSize = true;
-            this.lblFileSummary.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFileSummary.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFileSummary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
             this.lblFileSummary.Location = new System.Drawing.Point(350, 11);
             this.lblFileSummary.Name = "lblFileSummary";
@@ -242,7 +242,7 @@ namespace XpressShare.Forms.Controls
             // 
             this.btnClearAll.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
             this.btnClearAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClearAll.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClearAll.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClearAll.Location = new System.Drawing.Point(268, 5);
             this.btnClearAll.Name = "btnClearAll";
             this.btnClearAll.Size = new System.Drawing.Size(65, 26);
@@ -256,7 +256,7 @@ namespace XpressShare.Forms.Controls
             this.btnRemoveSelected.Enabled = false;
             this.btnRemoveSelected.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
             this.btnRemoveSelected.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemoveSelected.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveSelected.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoveSelected.Location = new System.Drawing.Point(197, 5);
             this.btnRemoveSelected.Name = "btnRemoveSelected";
             this.btnRemoveSelected.Size = new System.Drawing.Size(65, 26);
@@ -269,12 +269,12 @@ namespace XpressShare.Forms.Controls
             // 
             this.btnAddFolder.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
             this.btnAddFolder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddFolder.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddFolder.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddFolder.Location = new System.Drawing.Point(96, 5);
             this.btnAddFolder.Name = "btnAddFolder";
             this.btnAddFolder.Size = new System.Drawing.Size(95, 26);
             this.btnAddFolder.TabIndex = 1;
-            this.btnAddFolder.Text = "📁 Add Folder...";
+            this.btnAddFolder.Text = "Add Folder...";
             this.btnAddFolder.UseVisualStyleBackColor = true;
             this.btnAddFolder.Click += new System.EventHandler(this.BtnAddFolder_Click);
             // 
@@ -282,12 +282,12 @@ namespace XpressShare.Forms.Controls
             // 
             this.btnAddFiles.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
             this.btnAddFiles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddFiles.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddFiles.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddFiles.Location = new System.Drawing.Point(6, 5);
             this.btnAddFiles.Name = "btnAddFiles";
             this.btnAddFiles.Size = new System.Drawing.Size(84, 26);
             this.btnAddFiles.TabIndex = 0;
-            this.btnAddFiles.Text = "📄 Add Files...";
+            this.btnAddFiles.Text = "Add Files...";
             this.btnAddFiles.UseVisualStyleBackColor = true;
             this.btnAddFiles.Click += new System.EventHandler(this.BtnAddFiles_Click);
             // 
@@ -314,7 +314,7 @@ namespace XpressShare.Forms.Controls
             // 
             this.cboTargetFolder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cboTargetFolder.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTargetFolder.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.cboTargetFolder.Font = new System.Drawing.Font("Segoe UI", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTargetFolder.FormattingEnabled = true;
             this.cboTargetFolder.Items.AddRange(new object[] {
@@ -330,7 +330,7 @@ namespace XpressShare.Forms.Controls
             // lblFolderPrompt
             // 
             this.lblFolderPrompt.AutoSize = true;
-            this.lblFolderPrompt.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFolderPrompt.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFolderPrompt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
             this.lblFolderPrompt.Location = new System.Drawing.Point(12, 98);
             this.lblFolderPrompt.Name = "lblFolderPrompt";
@@ -343,12 +343,12 @@ namespace XpressShare.Forms.Controls
             this.btnScanDevices.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnScanDevices.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
             this.btnScanDevices.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnScanDevices.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnScanDevices.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnScanDevices.Location = new System.Drawing.Point(275, 49);
             this.btnScanDevices.Name = "btnScanDevices";
             this.btnScanDevices.Size = new System.Drawing.Size(75, 24);
             this.btnScanDevices.TabIndex = 2;
-            this.btnScanDevices.Text = "🔍 Scan";
+            this.btnScanDevices.Text = "Scan";
             this.btnScanDevices.UseVisualStyleBackColor = true;
             this.btnScanDevices.Click += new System.EventHandler(this.BtnScanDevices_Click);
             // 
@@ -368,13 +368,13 @@ namespace XpressShare.Forms.Controls
             // lblDevicePrompt
             // 
             this.lblDevicePrompt.AutoSize = true;
-            this.lblDevicePrompt.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDevicePrompt.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDevicePrompt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
             this.lblDevicePrompt.Location = new System.Drawing.Point(12, 29);
             this.lblDevicePrompt.Name = "lblDevicePrompt";
-            this.lblDevicePrompt.Size = new System.Drawing.Size(117, 13);
+            this.lblDevicePrompt.Size = new System.Drawing.Size(145, 13);
             this.lblDevicePrompt.TabIndex = 0;
-            this.lblDevicePrompt.Text = "Target Device (Peer):";
+            this.lblDevicePrompt.Text = "Destination Device (Peer):";
             // 
             // groupOptions
             // 
@@ -398,7 +398,7 @@ namespace XpressShare.Forms.Controls
             this.chkCompress.AutoSize = true;
             this.chkCompress.Checked = true;
             this.chkCompress.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkCompress.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkCompress.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkCompress.Location = new System.Drawing.Point(15, 87);
             this.chkCompress.Name = "chkCompress";
             this.chkCompress.Size = new System.Drawing.Size(268, 17);
@@ -411,7 +411,7 @@ namespace XpressShare.Forms.Controls
             this.chkVerifyChecksum.AutoSize = true;
             this.chkVerifyChecksum.Checked = true;
             this.chkVerifyChecksum.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkVerifyChecksum.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkVerifyChecksum.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkVerifyChecksum.Location = new System.Drawing.Point(15, 58);
             this.chkVerifyChecksum.Name = "chkVerifyChecksum";
             this.chkVerifyChecksum.Size = new System.Drawing.Size(248, 17);
@@ -424,7 +424,7 @@ namespace XpressShare.Forms.Controls
             this.chkEncrypt.AutoSize = true;
             this.chkEncrypt.Checked = true;
             this.chkEncrypt.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkEncrypt.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkEncrypt.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkEncrypt.Location = new System.Drawing.Point(15, 29);
             this.chkEncrypt.Name = "chkEncrypt";
             this.chkEncrypt.Size = new System.Drawing.Size(222, 17);
@@ -469,7 +469,7 @@ namespace XpressShare.Forms.Controls
             this.btnSendNow.Name = "btnSendNow";
             this.btnSendNow.Size = new System.Drawing.Size(185, 42);
             this.btnSendNow.TabIndex = 0;
-            this.btnSendNow.Text = "📤  Send Files Now";
+            this.btnSendNow.Text = "Send Files Now";
             this.btnSendNow.UseVisualStyleBackColor = false;
             this.btnSendNow.Click += new System.EventHandler(this.BtnSendNow_Click);
             // 
@@ -481,7 +481,7 @@ namespace XpressShare.Forms.Controls
             this.Controls.Add(this.tableLayout);
             this.Controls.Add(this.panelActionFooter);
             this.Controls.Add(this.panelHeader);
-            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "SendControl";
             this.Size = new System.Drawing.Size(950, 620);
             this.panelHeader.ResumeLayout(false);

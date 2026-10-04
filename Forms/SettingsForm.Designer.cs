@@ -145,11 +145,11 @@ namespace XpressShare.Forms
             // 
             // txtDownloadFolder
             // 
-            this.txtDownloadFolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            this.txtDownloadFolder.BackColor = System.Drawing.Color.White;
             this.txtDownloadFolder.Font = new System.Drawing.Font("Segoe UI", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDownloadFolder.Location = new System.Drawing.Point(16, 48);
             this.txtDownloadFolder.Name = "txtDownloadFolder";
-            this.txtDownloadFolder.ReadOnly = true;
+            this.txtDownloadFolder.ReadOnly = false;
             this.txtDownloadFolder.Size = new System.Drawing.Size(316, 23);
             this.txtDownloadFolder.TabIndex = 2;
             // 

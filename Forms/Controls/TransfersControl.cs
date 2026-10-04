@@ -26,8 +26,25 @@ namespace XpressShare.Forms.Controls
             base.OnLoad(e);
             if (DesignMode || LicenseManager.UsageMode == LicenseUsageMode.Designtime) return;
 
+            XpressShare.Controls.BufferedPanel.EnableDoubleBuffering(dgvTransfers);
+
             _transferManager = ServiceRegistry.Resolve<Services.TransferManager>("TransferManager");
             RefreshTransfers();
+        }
+
+        public void ApplyDensity(int rowHeight)
+        {
+            try
+            {
+                dgvTransfers.SuspendLayout();
+                dgvTransfers.RowTemplate.Height = rowHeight;
+                foreach (DataGridViewRow r in dgvTransfers.Rows)
+                {
+                    r.Height = rowHeight;
+                }
+                dgvTransfers.ResumeLayout();
+            }
+            catch { }
         }
 
         public void RefreshTransfers()

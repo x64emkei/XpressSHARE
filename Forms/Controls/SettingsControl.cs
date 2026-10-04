@@ -12,10 +12,39 @@ namespace XpressShare.Forms.Controls
     {
         public event Action<string> StatusMessageChanged;
         public event EventHandler ThemeToggleRequested;
+        public event Action<string> DensityChanged;
+
+        private bool _isWiringEvents = false;
 
         public SettingsControl()
         {
             InitializeComponent();
+            WireDensityEvents();
+        }
+
+        private void WireDensityEvents()
+        {
+            rbDensityCompact.CheckedChanged += delegate
+            {
+                if (!_isWiringEvents && rbDensityCompact.Checked && DensityChanged != null)
+                {
+                    DensityChanged("Compact");
+                }
+            };
+            rbDensityStandard.CheckedChanged += delegate
+            {
+                if (!_isWiringEvents && rbDensityStandard.Checked && DensityChanged != null)
+                {
+                    DensityChanged("Standard");
+                }
+            };
+            rbDensityComfortable.CheckedChanged += delegate
+            {
+                if (!_isWiringEvents && rbDensityComfortable.Checked && DensityChanged != null)
+                {
+                    DensityChanged("Comfortable");
+                }
+            };
         }
 
         protected override void OnLoad(EventArgs e)
@@ -30,6 +59,8 @@ namespace XpressShare.Forms.Controls
         {
             try
             {
+                _isWiringEvents = true;
+
                 txtDownloadPath.Text = AppSettings.Instance.SelectedDownloadFolder;
                 chkMinimizeToTray.Checked = AppSettings.Instance.TrayMinimizePreference;
 
@@ -53,11 +84,27 @@ namespace XpressShare.Forms.Controls
                     rbThemeLight.Checked = true;
                 }
 
-                rbDensityStandard.Checked = true;
+                string density = AppSettings.Instance.UiDensity;
+                if ("Compact".Equals(density, StringComparison.OrdinalIgnoreCase))
+                {
+                    rbDensityCompact.Checked = true;
+                }
+                else if ("Comfortable".Equals(density, StringComparison.OrdinalIgnoreCase))
+                {
+                    rbDensityComfortable.Checked = true;
+                }
+                else
+                {
+                    rbDensityStandard.Checked = true;
+                }
             }
             catch (Exception ex)
             {
                 AppLogger.Log("SettingsControl.LoadSettings error: " + ex.Message);
+            }
+            finally
+            {
+                _isWiringEvents = false;
             }
         }
 
@@ -97,9 +144,18 @@ namespace XpressShare.Forms.Controls
         {
             try
             {
-                if (!string.IsNullOrEmpty(txtDownloadPath.Text) && Directory.Exists(txtDownloadPath.Text))
+                string customFolder = txtDownloadPath.Text.Trim();
+                if (!string.IsNullOrEmpty(customFolder))
                 {
-                    AppSettings.Instance.SelectedDownloadFolder = txtDownloadPath.Text;
+                    try
+                    {
+                        if (!Directory.Exists(customFolder))
+                        {
+                            Directory.CreateDirectory(customFolder);
+                        }
+                    }
+                    catch { }
+                    AppSettings.Instance.SelectedDownloadFolder = customFolder;
                 }
 
                 AppSettings.Instance.TrayMinimizePreference = chkMinimizeToTray.Checked;
@@ -111,6 +167,7 @@ namespace XpressShare.Forms.Controls
                 bool newDark = rbThemeDark.Checked;
                 AppSettings.Instance.DarkMode = newDark;
 
+                AppSettings.Instance.UiDensity = rbDensityCompact.Checked ? "Compact" : (rbDensityComfortable.Checked ? "Comfortable" : "Standard");
                 AppSettings.Instance.Save();
 
                 if (wasDark != newDark && ThemeToggleRequested != null)

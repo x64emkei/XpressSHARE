@@ -18,22 +18,25 @@ namespace XpressShare.Forms
         public SplashForm()
         {
             InitializeComponent();
+            if (DesignMode || LicenseManager.UsageMode == LicenseUsageMode.Designtime) return;
             LoadSplashImage();
         }
 
         protected override void OnShown(EventArgs e)
         {
             base.OnShown(e);
+            if (DesignMode || LicenseManager.UsageMode == LicenseUsageMode.Designtime) return;
             _startupStartTime = DateTime.UtcNow;
             StartInitialization();
         }
 
         private void LoadSplashImage()
         {
+            if (DesignMode || LicenseManager.UsageMode == LicenseUsageMode.Designtime) return;
             string imagePath = Path.Combine(Application.StartupPath, "splash.bmp");
             if (!File.Exists(imagePath))
             {
-                throw new FileNotFoundException("The splash screen image could not be found.", imagePath);
+                return;
             }
 
             _splashImage = Image.FromFile(imagePath);

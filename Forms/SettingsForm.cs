@@ -14,6 +14,7 @@ namespace XpressShare.Forms
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
+            if (DesignMode || (System.ComponentModel.LicenseManager.UsageMode == System.ComponentModel.LicenseUsageMode.Designtime)) return;
 
             try
             {
@@ -45,7 +46,19 @@ namespace XpressShare.Forms
         private void BtnSave_Click(object sender, EventArgs e)
         {
             AppSettings settings = AppSettings.Instance;
-            settings.SelectedDownloadFolder = txtDownloadFolder.Text;
+            string customFolder = txtDownloadFolder.Text.Trim();
+            if (!string.IsNullOrEmpty(customFolder))
+            {
+                try
+                {
+                    if (!System.IO.Directory.Exists(customFolder))
+                    {
+                        System.IO.Directory.CreateDirectory(customFolder);
+                    }
+                }
+                catch { }
+                settings.SelectedDownloadFolder = customFolder;
+            }
             settings.TrayMinimizePreference = chkMinimizeToTray.Checked;
             settings.DevicePort = (int)numDevicePort.Value;
             settings.TransferPort = (int)numTransferPort.Value;

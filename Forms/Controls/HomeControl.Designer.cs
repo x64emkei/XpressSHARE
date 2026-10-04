@@ -16,12 +16,21 @@ namespace XpressShare.Forms.Controls
         private System.Windows.Forms.Label lblValComputer;
         private System.Windows.Forms.Label lblColUser;
         private System.Windows.Forms.Label lblValUser;
-        private System.Windows.Forms.Label lblColIp;
-        private System.Windows.Forms.Label lblValIp;
         private System.Windows.Forms.Label lblColOs;
         private System.Windows.Forms.Label lblValOs;
+        private System.Windows.Forms.Label lblColBuild;
+        private System.Windows.Forms.Label lblValBuild;
+        private System.Windows.Forms.Label lblColOsArch;
+        private System.Windows.Forms.Label lblValOsArch;
+
+        private System.Windows.Forms.Label lblColAppArch;
+        private System.Windows.Forms.Label lblValAppArch;
+        private System.Windows.Forms.Label lblColAppVersion;
+        private System.Windows.Forms.Label lblValAppVersion;
         private System.Windows.Forms.Label lblColConnection;
         private System.Windows.Forms.Label lblValConnection;
+        private System.Windows.Forms.Label lblColIp;
+        private System.Windows.Forms.Label lblValIp;
         private System.Windows.Forms.Label lblColStatus;
         private System.Windows.Forms.Label lblValStatus;
 
@@ -74,12 +83,20 @@ namespace XpressShare.Forms.Controls
             this.lblValComputer = new System.Windows.Forms.Label();
             this.lblColUser = new System.Windows.Forms.Label();
             this.lblValUser = new System.Windows.Forms.Label();
-            this.lblColIp = new System.Windows.Forms.Label();
-            this.lblValIp = new System.Windows.Forms.Label();
             this.lblColOs = new System.Windows.Forms.Label();
             this.lblValOs = new System.Windows.Forms.Label();
+            this.lblColBuild = new System.Windows.Forms.Label();
+            this.lblValBuild = new System.Windows.Forms.Label();
+            this.lblColOsArch = new System.Windows.Forms.Label();
+            this.lblValOsArch = new System.Windows.Forms.Label();
+            this.lblColAppArch = new System.Windows.Forms.Label();
+            this.lblValAppArch = new System.Windows.Forms.Label();
+            this.lblColAppVersion = new System.Windows.Forms.Label();
+            this.lblValAppVersion = new System.Windows.Forms.Label();
             this.lblColConnection = new System.Windows.Forms.Label();
             this.lblValConnection = new System.Windows.Forms.Label();
+            this.lblColIp = new System.Windows.Forms.Label();
+            this.lblValIp = new System.Windows.Forms.Label();
             this.lblColStatus = new System.Windows.Forms.Label();
             this.lblValStatus = new System.Windows.Forms.Label();
             this.groupQuickActions = new System.Windows.Forms.GroupBox();
@@ -128,28 +145,28 @@ namespace XpressShare.Forms.Controls
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(950, 54);
+            this.panelHeader.Size = new System.Drawing.Size(950, 56);
             this.panelHeader.TabIndex = 0;
             // 
             // lblWelcomeTitle
             // 
             this.lblWelcomeTitle.AutoSize = true;
-            this.lblWelcomeTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcomeTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
+            this.lblWelcomeTitle.Font = new System.Drawing.Font("Segoe UI", 13.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcomeTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
             this.lblWelcomeTitle.Location = new System.Drawing.Point(14, 8);
             this.lblWelcomeTitle.Name = "lblWelcomeTitle";
-            this.lblWelcomeTitle.Size = new System.Drawing.Size(193, 21);
+            this.lblWelcomeTitle.Size = new System.Drawing.Size(225, 25);
             this.lblWelcomeTitle.TabIndex = 0;
             this.lblWelcomeTitle.Text = "Welcome to XpressSHARE";
             // 
             // lblWelcomeSubtitle
             // 
             this.lblWelcomeSubtitle.AutoSize = true;
-            this.lblWelcomeSubtitle.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcomeSubtitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            this.lblWelcomeSubtitle.Location = new System.Drawing.Point(15, 31);
+            this.lblWelcomeSubtitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcomeSubtitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.lblWelcomeSubtitle.Location = new System.Drawing.Point(15, 33);
             this.lblWelcomeSubtitle.Name = "lblWelcomeSubtitle";
-            this.lblWelcomeSubtitle.Size = new System.Drawing.Size(350, 13);
+            this.lblWelcomeSubtitle.Size = new System.Drawing.Size(384, 15);
             this.lblWelcomeSubtitle.TabIndex = 1;
             this.lblWelcomeSubtitle.Text = "High-speed encrypted peer-to-peer file sharing and network workspace";
             // 
@@ -159,23 +176,23 @@ namespace XpressShare.Forms.Controls
             this.panelAccentBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelAccentBar.Location = new System.Drawing.Point(0, 0);
             this.panelAccentBar.Name = "panelAccentBar";
-            this.panelAccentBar.Size = new System.Drawing.Size(4, 54);
+            this.panelAccentBar.Size = new System.Drawing.Size(4, 56);
             this.panelAccentBar.TabIndex = 2;
             // 
             // tableMainLayout
             // 
             this.tableMainLayout.ColumnCount = 2;
-            this.tableMainLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58F));
-            this.tableMainLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42F));
+            this.tableMainLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64F));
+            this.tableMainLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36F));
             this.tableMainLayout.Controls.Add(this.groupThisComputer, 0, 0);
             this.tableMainLayout.Controls.Add(this.groupQuickActions, 1, 0);
             this.tableMainLayout.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableMainLayout.Location = new System.Drawing.Point(0, 54);
+            this.tableMainLayout.Location = new System.Drawing.Point(0, 56);
             this.tableMainLayout.Name = "tableMainLayout";
             this.tableMainLayout.Padding = new System.Windows.Forms.Padding(8, 6, 8, 4);
             this.tableMainLayout.RowCount = 1;
             this.tableMainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableMainLayout.Size = new System.Drawing.Size(950, 160);
+            this.tableMainLayout.Size = new System.Drawing.Size(950, 192);
             this.tableMainLayout.TabIndex = 1;
             // 
             // groupThisComputer
@@ -183,67 +200,78 @@ namespace XpressShare.Forms.Controls
             this.groupThisComputer.BackColor = System.Drawing.Color.White;
             this.groupThisComputer.Controls.Add(this.tableComputerInfo);
             this.groupThisComputer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupThisComputer.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupThisComputer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
+            this.groupThisComputer.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupThisComputer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
             this.groupThisComputer.Location = new System.Drawing.Point(11, 9);
             this.groupThisComputer.Name = "groupThisComputer";
             this.groupThisComputer.Padding = new System.Windows.Forms.Padding(10, 8, 10, 8);
-            this.groupThisComputer.Size = new System.Drawing.Size(535, 144);
+            this.groupThisComputer.Size = new System.Drawing.Size(591, 176);
             this.groupThisComputer.TabIndex = 0;
             this.groupThisComputer.TabStop = false;
-            this.groupThisComputer.Text = "This Computer";
+            this.groupThisComputer.Text = "THIS COMPUTER";
             // 
             // tableComputerInfo
             // 
             this.tableComputerInfo.ColumnCount = 4;
-            this.tableComputerInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 110F));
+            this.tableComputerInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 118F));
             this.tableComputerInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableComputerInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableComputerInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 105F));
             this.tableComputerInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableComputerInfo.Controls.Add(this.lblColComputer, 0, 0);
             this.tableComputerInfo.Controls.Add(this.lblValComputer, 1, 0);
             this.tableComputerInfo.Controls.Add(this.lblColUser, 0, 1);
             this.tableComputerInfo.Controls.Add(this.lblValUser, 1, 1);
-            this.tableComputerInfo.Controls.Add(this.lblColIp, 0, 2);
-            this.tableComputerInfo.Controls.Add(this.lblValIp, 1, 2);
-            this.tableComputerInfo.Controls.Add(this.lblColOs, 2, 0);
-            this.tableComputerInfo.Controls.Add(this.lblValOs, 3, 0);
-            this.tableComputerInfo.Controls.Add(this.lblColConnection, 2, 1);
-            this.tableComputerInfo.Controls.Add(this.lblValConnection, 3, 1);
-            this.tableComputerInfo.Controls.Add(this.lblColStatus, 2, 2);
-            this.tableComputerInfo.Controls.Add(this.lblValStatus, 3, 2);
+            this.tableComputerInfo.Controls.Add(this.lblColOs, 0, 2);
+            this.tableComputerInfo.Controls.Add(this.lblValOs, 1, 2);
+            this.tableComputerInfo.Controls.Add(this.lblColBuild, 0, 3);
+            this.tableComputerInfo.Controls.Add(this.lblValBuild, 1, 3);
+            this.tableComputerInfo.Controls.Add(this.lblColOsArch, 0, 4);
+            this.tableComputerInfo.Controls.Add(this.lblValOsArch, 1, 4);
+            this.tableComputerInfo.Controls.Add(this.lblColAppArch, 2, 0);
+            this.tableComputerInfo.Controls.Add(this.lblValAppArch, 3, 0);
+            this.tableComputerInfo.Controls.Add(this.lblColAppVersion, 2, 1);
+            this.tableComputerInfo.Controls.Add(this.lblValAppVersion, 3, 1);
+            this.tableComputerInfo.Controls.Add(this.lblColConnection, 2, 2);
+            this.tableComputerInfo.Controls.Add(this.lblValConnection, 3, 2);
+            this.tableComputerInfo.Controls.Add(this.lblColIp, 2, 3);
+            this.tableComputerInfo.Controls.Add(this.lblValIp, 3, 3);
+            this.tableComputerInfo.Controls.Add(this.lblColStatus, 2, 4);
+            this.tableComputerInfo.Controls.Add(this.lblValStatus, 3, 4);
             this.tableComputerInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableComputerInfo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableComputerInfo.Location = new System.Drawing.Point(10, 24);
+            this.tableComputerInfo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tableComputerInfo.Location = new System.Drawing.Point(10, 26);
             this.tableComputerInfo.Name = "tableComputerInfo";
-            this.tableComputerInfo.RowCount = 3;
-            this.tableComputerInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableComputerInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableComputerInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableComputerInfo.Size = new System.Drawing.Size(515, 112);
+            this.tableComputerInfo.RowCount = 5;
+            this.tableComputerInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableComputerInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableComputerInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableComputerInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableComputerInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableComputerInfo.Size = new System.Drawing.Size(571, 142);
             this.tableComputerInfo.TabIndex = 0;
             // 
             // lblColComputer
             // 
             this.lblColComputer.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblColComputer.AutoSize = true;
-            this.lblColComputer.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblColComputer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            this.lblColComputer.Location = new System.Drawing.Point(3, 12);
+            this.lblColComputer.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblColComputer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.lblColComputer.Location = new System.Drawing.Point(3, 6);
             this.lblColComputer.Name = "lblColComputer";
-            this.lblColComputer.Size = new System.Drawing.Size(92, 13);
+            this.lblColComputer.Size = new System.Drawing.Size(99, 15);
             this.lblColComputer.TabIndex = 0;
             this.lblColComputer.Text = "Computer Name:";
             // 
             // lblValComputer
             // 
             this.lblValComputer.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblValComputer.AutoEllipsis = true;
             this.lblValComputer.AutoSize = true;
-            this.lblValComputer.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValComputer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
-            this.lblValComputer.Location = new System.Drawing.Point(113, 12);
+            this.lblValComputer.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValComputer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.lblValComputer.Location = new System.Drawing.Point(121, 6);
             this.lblValComputer.Name = "lblValComputer";
-            this.lblValComputer.Size = new System.Drawing.Size(19, 13);
+            this.lblValComputer.Size = new System.Drawing.Size(22, 15);
             this.lblValComputer.TabIndex = 1;
             this.lblValComputer.Text = "PC";
             // 
@@ -251,136 +279,241 @@ namespace XpressShare.Forms.Controls
             // 
             this.lblColUser.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblColUser.AutoSize = true;
-            this.lblColUser.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblColUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            this.lblColUser.Location = new System.Drawing.Point(3, 49);
+            this.lblColUser.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblColUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.lblColUser.Location = new System.Drawing.Point(3, 34);
             this.lblColUser.Name = "lblColUser";
-            this.lblColUser.Size = new System.Drawing.Size(73, 13);
+            this.lblColUser.Size = new System.Drawing.Size(76, 15);
             this.lblColUser.TabIndex = 2;
             this.lblColUser.Text = "Current User:";
             // 
             // lblValUser
             // 
             this.lblValUser.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblValUser.AutoEllipsis = true;
             this.lblValUser.AutoSize = true;
-            this.lblValUser.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
-            this.lblValUser.Location = new System.Drawing.Point(113, 49);
+            this.lblValUser.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.lblValUser.Location = new System.Drawing.Point(121, 34);
             this.lblValUser.Name = "lblValUser";
-            this.lblValUser.Size = new System.Drawing.Size(30, 13);
+            this.lblValUser.Size = new System.Drawing.Size(33, 15);
             this.lblValUser.TabIndex = 3;
             this.lblValUser.Text = "User";
-            // 
-            // lblColIp
-            // 
-            this.lblColIp.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblColIp.AutoSize = true;
-            this.lblColIp.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblColIp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            this.lblColIp.Location = new System.Drawing.Point(3, 86);
-            this.lblColIp.Name = "lblColIp";
-            this.lblColIp.Size = new System.Drawing.Size(63, 13);
-            this.lblColIp.TabIndex = 4;
-            this.lblColIp.Text = "IP Address:";
-            // 
-            // lblValIp
-            // 
-            this.lblValIp.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblValIp.AutoSize = true;
-            this.lblValIp.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValIp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
-            this.lblValIp.Location = new System.Drawing.Point(113, 86);
-            this.lblValIp.Name = "lblValIp";
-            this.lblValIp.Size = new System.Drawing.Size(52, 13);
-            this.lblValIp.TabIndex = 5;
-            this.lblValIp.Text = "127.0.0.1";
             // 
             // lblColOs
             // 
             this.lblColOs.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblColOs.AutoSize = true;
-            this.lblColOs.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblColOs.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            this.lblColOs.Location = new System.Drawing.Point(265, 12);
+            this.lblColOs.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblColOs.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.lblColOs.Location = new System.Drawing.Point(3, 62);
             this.lblColOs.Name = "lblColOs";
-            this.lblColOs.Size = new System.Drawing.Size(25, 13);
-            this.lblColOs.TabIndex = 6;
-            this.lblColOs.Text = "OS:";
+            this.lblColOs.Size = new System.Drawing.Size(104, 15);
+            this.lblColOs.TabIndex = 4;
+            this.lblColOs.Text = "Operating System:";
             // 
             // lblValOs
             // 
             this.lblValOs.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblValOs.AutoEllipsis = true;
             this.lblValOs.AutoSize = true;
-            this.lblValOs.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValOs.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
-            this.lblValOs.Location = new System.Drawing.Point(365, 12);
+            this.lblValOs.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValOs.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.lblValOs.Location = new System.Drawing.Point(121, 62);
             this.lblValOs.Name = "lblValOs";
-            this.lblValOs.Size = new System.Drawing.Size(55, 13);
-            this.lblValOs.TabIndex = 7;
-            this.lblValOs.Text = "Windows";
+            this.lblValOs.Size = new System.Drawing.Size(68, 15);
+            this.lblValOs.TabIndex = 5;
+            this.lblValOs.Text = "Windows 8";
+            // 
+            // lblColBuild
+            // 
+            this.lblColBuild.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblColBuild.AutoSize = true;
+            this.lblColBuild.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblColBuild.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.lblColBuild.Location = new System.Drawing.Point(3, 90);
+            this.lblColBuild.Name = "lblColBuild";
+            this.lblColBuild.Size = new System.Drawing.Size(37, 15);
+            this.lblColBuild.TabIndex = 6;
+            this.lblColBuild.Text = "Build:";
+            // 
+            // lblValBuild
+            // 
+            this.lblValBuild.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblValBuild.AutoEllipsis = true;
+            this.lblValBuild.AutoSize = true;
+            this.lblValBuild.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValBuild.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.lblValBuild.Location = new System.Drawing.Point(121, 90);
+            this.lblValBuild.Name = "lblValBuild";
+            this.lblValBuild.Size = new System.Drawing.Size(35, 15);
+            this.lblValBuild.TabIndex = 7;
+            this.lblValBuild.Text = "9200";
+            // 
+            // lblColOsArch
+            // 
+            this.lblColOsArch.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblColOsArch.AutoSize = true;
+            this.lblColOsArch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblColOsArch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.lblColOsArch.Location = new System.Drawing.Point(3, 119);
+            this.lblColOsArch.Name = "lblColOsArch";
+            this.lblColOsArch.Size = new System.Drawing.Size(95, 15);
+            this.lblColOsArch.TabIndex = 8;
+            this.lblColOsArch.Text = "OS Architecture:";
+            // 
+            // lblValOsArch
+            // 
+            this.lblValOsArch.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblValOsArch.AutoEllipsis = true;
+            this.lblValOsArch.AutoSize = true;
+            this.lblValOsArch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValOsArch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.lblValOsArch.Location = new System.Drawing.Point(121, 119);
+            this.lblValOsArch.Name = "lblValOsArch";
+            this.lblValOsArch.Size = new System.Drawing.Size(40, 15);
+            this.lblValOsArch.TabIndex = 9;
+            this.lblValOsArch.Text = "64-bit";
+            // 
+            // lblColAppArch
+            // 
+            this.lblColAppArch.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblColAppArch.AutoSize = true;
+            this.lblColAppArch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblColAppArch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.lblColAppArch.Location = new System.Drawing.Point(308, 6);
+            this.lblColAppArch.Name = "lblColAppArch";
+            this.lblColAppArch.Size = new System.Drawing.Size(77, 15);
+            this.lblColAppArch.TabIndex = 10;
+            this.lblColAppArch.Text = "XpressSHARE:";
+            // 
+            // lblValAppArch
+            // 
+            this.lblValAppArch.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblValAppArch.AutoEllipsis = true;
+            this.lblValAppArch.AutoSize = true;
+            this.lblValAppArch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValAppArch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblValAppArch.Location = new System.Drawing.Point(413, 6);
+            this.lblValAppArch.Name = "lblValAppArch";
+            this.lblValAppArch.Size = new System.Drawing.Size(40, 15);
+            this.lblValAppArch.TabIndex = 11;
+            this.lblValAppArch.Text = "64-bit";
+            // 
+            // lblColAppVersion
+            // 
+            this.lblColAppVersion.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblColAppVersion.AutoSize = true;
+            this.lblColAppVersion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblColAppVersion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.lblColAppVersion.Location = new System.Drawing.Point(308, 34);
+            this.lblColAppVersion.Name = "lblColAppVersion";
+            this.lblColAppVersion.Size = new System.Drawing.Size(49, 15);
+            this.lblColAppVersion.TabIndex = 12;
+            this.lblColAppVersion.Text = "Version:";
+            // 
+            // lblValAppVersion
+            // 
+            this.lblValAppVersion.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblValAppVersion.AutoEllipsis = true;
+            this.lblValAppVersion.AutoSize = true;
+            this.lblValAppVersion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValAppVersion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.lblValAppVersion.Location = new System.Drawing.Point(413, 34);
+            this.lblValAppVersion.Name = "lblValAppVersion";
+            this.lblValAppVersion.Size = new System.Drawing.Size(34, 15);
+            this.lblValAppVersion.TabIndex = 13;
+            this.lblValAppVersion.Text = "0.5.0";
             // 
             // lblColConnection
             // 
             this.lblColConnection.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblColConnection.AutoSize = true;
-            this.lblColConnection.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblColConnection.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            this.lblColConnection.Location = new System.Drawing.Point(265, 49);
+            this.lblColConnection.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblColConnection.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.lblColConnection.Location = new System.Drawing.Point(308, 62);
             this.lblColConnection.Name = "lblColConnection";
-            this.lblColConnection.Size = new System.Drawing.Size(70, 13);
-            this.lblColConnection.TabIndex = 8;
+            this.lblColConnection.Size = new System.Drawing.Size(72, 15);
+            this.lblColConnection.TabIndex = 14;
             this.lblColConnection.Text = "Connection:";
             // 
             // lblValConnection
             // 
             this.lblValConnection.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblValConnection.AutoEllipsis = true;
             this.lblValConnection.AutoSize = true;
-            this.lblValConnection.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValConnection.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
-            this.lblValConnection.Location = new System.Drawing.Point(365, 49);
+            this.lblValConnection.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValConnection.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.lblValConnection.Location = new System.Drawing.Point(413, 62);
             this.lblValConnection.Name = "lblValConnection";
-            this.lblValConnection.Size = new System.Drawing.Size(50, 13);
-            this.lblValConnection.TabIndex = 9;
+            this.lblValConnection.Size = new System.Drawing.Size(53, 15);
+            this.lblValConnection.TabIndex = 15;
             this.lblValConnection.Text = "Ethernet";
+            // 
+            // lblColIp
+            // 
+            this.lblColIp.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblColIp.AutoSize = true;
+            this.lblColIp.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblColIp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.lblColIp.Location = new System.Drawing.Point(308, 90);
+            this.lblColIp.Name = "lblColIp";
+            this.lblColIp.Size = new System.Drawing.Size(65, 15);
+            this.lblColIp.TabIndex = 16;
+            this.lblColIp.Text = "IP Address:";
+            // 
+            // lblValIp
+            // 
+            this.lblValIp.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblValIp.AutoEllipsis = true;
+            this.lblValIp.AutoSize = true;
+            this.lblValIp.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValIp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.lblValIp.Location = new System.Drawing.Point(413, 90);
+            this.lblValIp.Name = "lblValIp";
+            this.lblValIp.Size = new System.Drawing.Size(76, 15);
+            this.lblValIp.TabIndex = 17;
+            this.lblValIp.Text = "100.71.73.63";
             // 
             // lblColStatus
             // 
             this.lblColStatus.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblColStatus.AutoSize = true;
-            this.lblColStatus.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblColStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            this.lblColStatus.Location = new System.Drawing.Point(265, 86);
+            this.lblColStatus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblColStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.lblColStatus.Location = new System.Drawing.Point(308, 119);
             this.lblColStatus.Name = "lblColStatus";
-            this.lblColStatus.Size = new System.Drawing.Size(42, 13);
-            this.lblColStatus.TabIndex = 10;
+            this.lblColStatus.Size = new System.Drawing.Size(42, 15);
+            this.lblColStatus.TabIndex = 18;
             this.lblColStatus.Text = "Status:";
             // 
             // lblValStatus
             // 
             this.lblValStatus.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblValStatus.AutoEllipsis = true;
             this.lblValStatus.AutoSize = true;
-            this.lblValStatus.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValStatus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblValStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(185)))), ((int)(((byte)(129)))));
-            this.lblValStatus.Location = new System.Drawing.Point(365, 86);
+            this.lblValStatus.Location = new System.Drawing.Point(413, 119);
             this.lblValStatus.Name = "lblValStatus";
-            this.lblValStatus.Size = new System.Drawing.Size(53, 13);
-            this.lblValStatus.TabIndex = 11;
-            this.lblValStatus.Text = "● Online";
+            this.lblValStatus.Size = new System.Drawing.Size(133, 15);
+            this.lblValStatus.TabIndex = 19;
+            this.lblValStatus.Text = "Online (Ready to Share)";
             // 
             // groupQuickActions
             // 
             this.groupQuickActions.BackColor = System.Drawing.Color.White;
             this.groupQuickActions.Controls.Add(this.flowQuickActions);
             this.groupQuickActions.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupQuickActions.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupQuickActions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
-            this.groupQuickActions.Location = new System.Drawing.Point(552, 9);
+            this.groupQuickActions.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupQuickActions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
+            this.groupQuickActions.Location = new System.Drawing.Point(608, 9);
             this.groupQuickActions.Name = "groupQuickActions";
             this.groupQuickActions.Padding = new System.Windows.Forms.Padding(10, 8, 10, 8);
-            this.groupQuickActions.Size = new System.Drawing.Size(387, 144);
+            this.groupQuickActions.Size = new System.Drawing.Size(331, 176);
             this.groupQuickActions.TabIndex = 1;
             this.groupQuickActions.TabStop = false;
-            this.groupQuickActions.Text = "Get Started";
+            this.groupQuickActions.Text = "GET STARTED";
             // 
             // flowQuickActions
             // 
@@ -389,10 +522,12 @@ namespace XpressShare.Forms.Controls
             this.flowQuickActions.Controls.Add(this.btnQuickDevices);
             this.flowQuickActions.Controls.Add(this.btnQuickExplorer);
             this.flowQuickActions.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowQuickActions.Location = new System.Drawing.Point(10, 24);
+            this.flowQuickActions.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowQuickActions.Location = new System.Drawing.Point(10, 26);
             this.flowQuickActions.Name = "flowQuickActions";
-            this.flowQuickActions.Size = new System.Drawing.Size(367, 112);
+            this.flowQuickActions.Size = new System.Drawing.Size(311, 142);
             this.flowQuickActions.TabIndex = 0;
+            this.flowQuickActions.WrapContents = false;
             // 
             // btnQuickSend
             // 
@@ -400,72 +535,72 @@ namespace XpressShare.Forms.Controls
             this.btnQuickSend.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnQuickSend.FlatAppearance.BorderSize = 0;
             this.btnQuickSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuickSend.Font = new System.Drawing.Font("Segoe UI", 8.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuickSend.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuickSend.ForeColor = System.Drawing.Color.White;
-            this.btnQuickSend.Location = new System.Drawing.Point(4, 4);
-            this.btnQuickSend.Margin = new System.Windows.Forms.Padding(4);
+            this.btnQuickSend.Location = new System.Drawing.Point(3, 2);
+            this.btnQuickSend.Margin = new System.Windows.Forms.Padding(3, 2, 3, 4);
             this.btnQuickSend.Name = "btnQuickSend";
-            this.btnQuickSend.Size = new System.Drawing.Size(170, 46);
+            this.btnQuickSend.Size = new System.Drawing.Size(304, 32);
             this.btnQuickSend.TabIndex = 0;
-            this.btnQuickSend.Text = "📤  Send Files...";
+            this.btnQuickSend.Text = "Send Files...";
             this.btnQuickSend.UseVisualStyleBackColor = false;
             this.btnQuickSend.Click += new System.EventHandler(this.BtnQuickSend_Click);
             // 
             // btnQuickReceive
             // 
-            this.btnQuickReceive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(245)))));
+            this.btnQuickReceive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(245)))));
             this.btnQuickReceive.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnQuickReceive.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
+            this.btnQuickReceive.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(205)))), ((int)(((byte)(210)))));
             this.btnQuickReceive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuickReceive.Font = new System.Drawing.Font("Segoe UI", 8.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuickReceive.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
-            this.btnQuickReceive.Location = new System.Drawing.Point(182, 4);
-            this.btnQuickReceive.Margin = new System.Windows.Forms.Padding(4);
+            this.btnQuickReceive.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuickReceive.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
+            this.btnQuickReceive.Location = new System.Drawing.Point(3, 39);
+            this.btnQuickReceive.Margin = new System.Windows.Forms.Padding(3, 1, 3, 3);
             this.btnQuickReceive.Name = "btnQuickReceive";
-            this.btnQuickReceive.Size = new System.Drawing.Size(170, 46);
+            this.btnQuickReceive.Size = new System.Drawing.Size(304, 30);
             this.btnQuickReceive.TabIndex = 1;
-            this.btnQuickReceive.Text = "📥  Receive Files";
+            this.btnQuickReceive.Text = "Receive Files";
             this.btnQuickReceive.UseVisualStyleBackColor = false;
             this.btnQuickReceive.Click += new System.EventHandler(this.BtnQuickReceive_Click);
             // 
             // btnQuickDevices
             // 
-            this.btnQuickDevices.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(245)))));
+            this.btnQuickDevices.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(245)))));
             this.btnQuickDevices.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnQuickDevices.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
+            this.btnQuickDevices.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(205)))), ((int)(((byte)(210)))));
             this.btnQuickDevices.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuickDevices.Font = new System.Drawing.Font("Segoe UI", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuickDevices.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
-            this.btnQuickDevices.Location = new System.Drawing.Point(4, 58);
-            this.btnQuickDevices.Margin = new System.Windows.Forms.Padding(4);
+            this.btnQuickDevices.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuickDevices.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
+            this.btnQuickDevices.Location = new System.Drawing.Point(3, 73);
+            this.btnQuickDevices.Margin = new System.Windows.Forms.Padding(3, 1, 3, 3);
             this.btnQuickDevices.Name = "btnQuickDevices";
-            this.btnQuickDevices.Size = new System.Drawing.Size(170, 46);
+            this.btnQuickDevices.Size = new System.Drawing.Size(304, 30);
             this.btnQuickDevices.TabIndex = 2;
-            this.btnQuickDevices.Text = "🔍  Browse Devices";
+            this.btnQuickDevices.Text = "Browse Devices";
             this.btnQuickDevices.UseVisualStyleBackColor = false;
             this.btnQuickDevices.Click += new System.EventHandler(this.BtnQuickDevices_Click);
             // 
             // btnQuickExplorer
             // 
-            this.btnQuickExplorer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(245)))));
+            this.btnQuickExplorer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(245)))));
             this.btnQuickExplorer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnQuickExplorer.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
+            this.btnQuickExplorer.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(205)))), ((int)(((byte)(210)))));
             this.btnQuickExplorer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuickExplorer.Font = new System.Drawing.Font("Segoe UI", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuickExplorer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
-            this.btnQuickExplorer.Location = new System.Drawing.Point(182, 58);
-            this.btnQuickExplorer.Margin = new System.Windows.Forms.Padding(4);
+            this.btnQuickExplorer.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuickExplorer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
+            this.btnQuickExplorer.Location = new System.Drawing.Point(3, 107);
+            this.btnQuickExplorer.Margin = new System.Windows.Forms.Padding(3, 1, 3, 3);
             this.btnQuickExplorer.Name = "btnQuickExplorer";
-            this.btnQuickExplorer.Size = new System.Drawing.Size(170, 46);
+            this.btnQuickExplorer.Size = new System.Drawing.Size(304, 30);
             this.btnQuickExplorer.TabIndex = 3;
-            this.btnQuickExplorer.Text = "📁  Open Explorer";
+            this.btnQuickExplorer.Text = "Open Explorer";
             this.btnQuickExplorer.UseVisualStyleBackColor = false;
             this.btnQuickExplorer.Click += new System.EventHandler(this.BtnQuickExplorer_Click);
             // 
             // splitRecentAndDevices
             // 
             this.splitRecentAndDevices.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitRecentAndDevices.Location = new System.Drawing.Point(0, 214);
+            this.splitRecentAndDevices.Location = new System.Drawing.Point(0, 248);
             this.splitRecentAndDevices.Name = "splitRecentAndDevices";
             // 
             // splitRecentAndDevices.Panel1
@@ -477,7 +612,7 @@ namespace XpressShare.Forms.Controls
             // 
             this.splitRecentAndDevices.Panel2.Controls.Add(this.groupDevicesOnline);
             this.splitRecentAndDevices.Panel2.Padding = new System.Windows.Forms.Padding(4, 4, 8, 8);
-            this.splitRecentAndDevices.Size = new System.Drawing.Size(950, 406);
+            this.splitRecentAndDevices.Size = new System.Drawing.Size(950, 372);
             this.splitRecentAndDevices.SplitterDistance = 580;
             this.splitRecentAndDevices.TabIndex = 2;
             // 
@@ -486,35 +621,37 @@ namespace XpressShare.Forms.Controls
             this.groupRecentTransfers.BackColor = System.Drawing.Color.White;
             this.groupRecentTransfers.Controls.Add(this.dgvRecentTransfers);
             this.groupRecentTransfers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupRecentTransfers.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupRecentTransfers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
+            this.groupRecentTransfers.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupRecentTransfers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
             this.groupRecentTransfers.Location = new System.Drawing.Point(8, 4);
             this.groupRecentTransfers.Name = "groupRecentTransfers";
-            this.groupRecentTransfers.Padding = new System.Windows.Forms.Padding(8);
-            this.groupRecentTransfers.Size = new System.Drawing.Size(568, 394);
+            this.groupRecentTransfers.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.groupRecentTransfers.Size = new System.Drawing.Size(568, 360);
             this.groupRecentTransfers.TabIndex = 0;
             this.groupRecentTransfers.TabStop = false;
-            this.groupRecentTransfers.Text = "Recent Transfers";
+            this.groupRecentTransfers.Text = "RECENT TRANSFERS";
             // 
             // dgvRecentTransfers
             // 
             this.dgvRecentTransfers.AllowUserToAddRows = false;
             this.dgvRecentTransfers.AllowUserToDeleteRows = false;
             this.dgvRecentTransfers.AllowUserToResizeRows = false;
+            this.dgvRecentTransfers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRecentTransfers.BackgroundColor = System.Drawing.Color.White;
             this.dgvRecentTransfers.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvRecentTransfers.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvRecentTransfers.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dgvCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dgvCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(245)))));
-            dgvCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dgvCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
-            dgvCellStyle1.Padding = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            dgvCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(245)))));
+            dgvCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dgvCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
+            dgvCellStyle1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             dgvCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dgvCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dgvCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvRecentTransfers.ColumnHeadersDefaultCellStyle = dgvCellStyle1;
-            this.dgvRecentTransfers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRecentTransfers.ColumnHeadersHeight = 30;
+            this.dgvRecentTransfers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvRecentTransfers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colRecentFile,
             this.colRecentPeer,
@@ -523,65 +660,66 @@ namespace XpressShare.Forms.Controls
             this.colRecentDate});
             dgvCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dgvCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dgvCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dgvCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
-            dgvCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
-            dgvCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dgvCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dgvCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            dgvCellStyle2.Padding = new System.Windows.Forms.Padding(4, 1, 4, 1);
+            dgvCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            dgvCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             dgvCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvRecentTransfers.DefaultCellStyle = dgvCellStyle2;
             this.dgvRecentTransfers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvRecentTransfers.EnableHeadersVisualStyles = false;
-            this.dgvRecentTransfers.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(238)))), ((int)(((byte)(240)))));
-            this.dgvRecentTransfers.Location = new System.Drawing.Point(8, 24);
+            this.dgvRecentTransfers.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(224)))), ((int)(((byte)(228)))));
+            this.dgvRecentTransfers.Location = new System.Drawing.Point(8, 26);
             this.dgvRecentTransfers.MultiSelect = false;
             this.dgvRecentTransfers.Name = "dgvRecentTransfers";
             this.dgvRecentTransfers.ReadOnly = true;
             this.dgvRecentTransfers.RowHeadersVisible = false;
-            this.dgvRecentTransfers.RowTemplate.Height = 24;
+            this.dgvRecentTransfers.RowTemplate.Height = 26;
             this.dgvRecentTransfers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRecentTransfers.Size = new System.Drawing.Size(552, 362);
+            this.dgvRecentTransfers.Size = new System.Drawing.Size(552, 326);
             this.dgvRecentTransfers.TabIndex = 0;
             this.dgvRecentTransfers.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvRecentTransfers_CellDoubleClick);
             // 
             // colRecentFile
             // 
-            this.colRecentFile.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colRecentFile.FillWeight = 140F;
+            this.colRecentFile.FillWeight = 36F;
             this.colRecentFile.HeaderText = "File Name";
+            this.colRecentFile.MinimumWidth = 140;
             this.colRecentFile.Name = "colRecentFile";
             this.colRecentFile.ReadOnly = true;
             // 
             // colRecentPeer
             // 
-            this.colRecentPeer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colRecentPeer.FillWeight = 90F;
+            this.colRecentPeer.FillWeight = 24F;
             this.colRecentPeer.HeaderText = "Peer";
+            this.colRecentPeer.MinimumWidth = 100;
             this.colRecentPeer.Name = "colRecentPeer";
             this.colRecentPeer.ReadOnly = true;
             // 
             // colRecentSize
             // 
-            this.colRecentSize.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colRecentSize.FillWeight = 14F;
             this.colRecentSize.HeaderText = "Size";
+            this.colRecentSize.MinimumWidth = 70;
             this.colRecentSize.Name = "colRecentSize";
             this.colRecentSize.ReadOnly = true;
-            this.colRecentSize.Width = 55;
             // 
             // colRecentStatus
             // 
-            this.colRecentStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colRecentStatus.FillWeight = 14F;
             this.colRecentStatus.HeaderText = "Status";
+            this.colRecentStatus.MinimumWidth = 80;
             this.colRecentStatus.Name = "colRecentStatus";
             this.colRecentStatus.ReadOnly = true;
-            this.colRecentStatus.Width = 66;
             // 
             // colRecentDate
             // 
-            this.colRecentDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colRecentDate.FillWeight = 20F;
             this.colRecentDate.HeaderText = "Date";
+            this.colRecentDate.MinimumWidth = 110;
             this.colRecentDate.Name = "colRecentDate";
             this.colRecentDate.ReadOnly = true;
-            this.colRecentDate.Width = 57;
             // 
             // groupDevicesOnline
             // 
@@ -589,15 +727,15 @@ namespace XpressShare.Forms.Controls
             this.groupDevicesOnline.Controls.Add(this.listDevicesOnline);
             this.groupDevicesOnline.Controls.Add(this.panelDevicesHeader);
             this.groupDevicesOnline.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupDevicesOnline.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupDevicesOnline.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
+            this.groupDevicesOnline.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupDevicesOnline.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
             this.groupDevicesOnline.Location = new System.Drawing.Point(4, 4);
             this.groupDevicesOnline.Name = "groupDevicesOnline";
-            this.groupDevicesOnline.Padding = new System.Windows.Forms.Padding(8);
-            this.groupDevicesOnline.Size = new System.Drawing.Size(354, 394);
+            this.groupDevicesOnline.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.groupDevicesOnline.Size = new System.Drawing.Size(354, 360);
             this.groupDevicesOnline.TabIndex = 0;
             this.groupDevicesOnline.TabStop = false;
-            this.groupDevicesOnline.Text = "Devices Online";
+            this.groupDevicesOnline.Text = "DEVICES ONLINE";
             // 
             // listDevicesOnline
             // 
@@ -608,14 +746,16 @@ namespace XpressShare.Forms.Controls
             this.colDevType,
             this.colDevState});
             this.listDevicesOnline.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listDevicesOnline.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listDevicesOnline.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listDevicesOnline.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.listDevicesOnline.FullRowSelect = true;
             this.listDevicesOnline.GridLines = true;
             this.listDevicesOnline.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.listDevicesOnline.Location = new System.Drawing.Point(8, 50);
+            this.listDevicesOnline.HideSelection = false;
+            this.listDevicesOnline.Location = new System.Drawing.Point(8, 52);
             this.listDevicesOnline.MultiSelect = false;
             this.listDevicesOnline.Name = "listDevicesOnline";
-            this.listDevicesOnline.Size = new System.Drawing.Size(338, 336);
+            this.listDevicesOnline.Size = new System.Drawing.Size(338, 300);
             this.listDevicesOnline.TabIndex = 0;
             this.listDevicesOnline.UseCompatibleStateImageBehavior = false;
             this.listDevicesOnline.View = System.Windows.Forms.View.Details;
@@ -623,28 +763,28 @@ namespace XpressShare.Forms.Controls
             // colDevName
             // 
             this.colDevName.Text = "Device Name";
-            this.colDevName.Width = 120;
+            this.colDevName.Width = 140;
             // 
             // colDevIp
             // 
             this.colDevIp.Text = "IP Address";
-            this.colDevIp.Width = 90;
+            this.colDevIp.Width = 110;
             // 
             // colDevType
             // 
             this.colDevType.Text = "Network";
-            this.colDevType.Width = 65;
+            this.colDevType.Width = 80;
             // 
             // colDevState
             // 
             this.colDevState.Text = "State";
-            this.colDevState.Width = 60;
+            this.colDevState.Width = 80;
             // 
             // panelDevicesHeader
             // 
             this.panelDevicesHeader.Controls.Add(this.lblDevicesCount);
             this.panelDevicesHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelDevicesHeader.Location = new System.Drawing.Point(8, 24);
+            this.panelDevicesHeader.Location = new System.Drawing.Point(8, 26);
             this.panelDevicesHeader.Name = "panelDevicesHeader";
             this.panelDevicesHeader.Size = new System.Drawing.Size(338, 26);
             this.panelDevicesHeader.TabIndex = 1;
@@ -652,23 +792,23 @@ namespace XpressShare.Forms.Controls
             // lblDevicesCount
             // 
             this.lblDevicesCount.AutoSize = true;
-            this.lblDevicesCount.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDevicesCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            this.lblDevicesCount.Location = new System.Drawing.Point(4, 6);
+            this.lblDevicesCount.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDevicesCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.lblDevicesCount.Location = new System.Drawing.Point(2, 4);
             this.lblDevicesCount.Name = "lblDevicesCount";
-            this.lblDevicesCount.Size = new System.Drawing.Size(91, 13);
+            this.lblDevicesCount.Size = new System.Drawing.Size(155, 15);
             this.lblDevicesCount.TabIndex = 0;
-            this.lblDevicesCount.Text = "0 device(s) online";
+            this.lblDevicesCount.Text = "Scanning local network...";
             // 
             // HomeControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.splitRecentAndDevices);
             this.Controls.Add(this.tableMainLayout);
             this.Controls.Add(this.panelHeader);
-            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "HomeControl";
             this.Size = new System.Drawing.Size(950, 620);
             this.panelHeader.ResumeLayout(false);

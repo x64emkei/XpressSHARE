@@ -40,6 +40,10 @@ namespace XpressShare.Forms.Controls
             listRemote.SmallImageList = _imgListSmall;
             listRemote.LargeImageList = _imgListLarge;
 
+            XpressShare.Controls.BufferedPanel.EnableDoubleBuffering(listLocal);
+            XpressShare.Controls.BufferedPanel.EnableDoubleBuffering(listRemote);
+            XpressShare.Controls.BufferedPanel.EnableDoubleBuffering(splitPanes);
+
             PopulateRemotePeers();
 
             string initialPath = AppSettings.Instance.SelectedDownloadFolder;
@@ -142,7 +146,7 @@ namespace XpressShare.Forms.Controls
 
             if (path == "THIS_PC")
             {
-                lblLocalHeaderTitle.Text = "This PC (Local Storage Drives)";
+                lblLocalHeaderTitle.Text = "SOURCE: This Computer";
                 PopulateThisPc(listLocal);
             }
             else
@@ -154,7 +158,7 @@ namespace XpressShare.Forms.Controls
                 }
 
                 string name = Path.GetFileName(path);
-                lblLocalHeaderTitle.Text = string.IsNullOrEmpty(name) ? path : name;
+                lblLocalHeaderTitle.Text = "SOURCE: " + (string.IsNullOrEmpty(name) ? path : name);
                 PopulateFolder(listLocal, path, txtSearch.Text);
             }
 
@@ -250,7 +254,7 @@ namespace XpressShare.Forms.Controls
         public void PopulateRemotePeers()
         {
             cboRemotePeer.Items.Clear();
-            cboRemotePeer.Items.Add("Local: Downloads Folder");
+            cboRemotePeer.Items.Add("DESTINATION: Downloads Folder");
 
             TrustedDeviceService trustedService = ServiceRegistry.Resolve<TrustedDeviceService>("TrustedDeviceService");
             if (trustedService != null)
@@ -281,19 +285,19 @@ namespace XpressShare.Forms.Controls
             if (cboRemotePeer.SelectedItem is MainForm.DeviceItem)
             {
                 MainForm.DeviceItem dev = (MainForm.DeviceItem)cboRemotePeer.SelectedItem;
-                lblRemoteHeaderTitle.Text = "Peer: " + dev.DeviceName + " (" + dev.IpAddress + ")";
+                lblRemoteHeaderTitle.Text = "DESTINATION: " + dev.DeviceName + " (" + dev.IpAddress + ")";
                 listRemote.Items.Clear();
 
-                ListViewItem item = new ListViewItem("Drag files here to transmit to " + dev.DeviceName);
+                ListViewItem item = new ListViewItem("Drag files or click Transfer to transmit to " + dev.DeviceName);
                 item.SubItems.Add("--");
-                item.SubItems.Add("Remote Peer Drop Target");
+                item.SubItems.Add("Remote Destination");
                 item.SubItems.Add("--");
-                item.SubItems.Add("Ready for Drop");
+                item.SubItems.Add("Ready for Transfer");
                 listRemote.Items.Add(item);
             }
             else
             {
-                lblRemoteHeaderTitle.Text = "Local Destination: Downloads";
+                lblRemoteHeaderTitle.Text = "DESTINATION: Downloads Folder";
                 string down = AppSettings.Instance.SelectedDownloadFolder;
                 if (!string.IsNullOrEmpty(down) && Directory.Exists(down))
                 {
@@ -459,15 +463,63 @@ namespace XpressShare.Forms.Controls
         {
             splitPanes.Panel2Collapsed = !splitPanes.Panel2Collapsed;
             btnActToggleDual.Checked = !splitPanes.Panel2Collapsed;
-            NotifyStatus(splitPanes.Panel2Collapsed ? "Single-pane mode enabled." : "Dual-pane mode enabled.");
+            NotifyStatus(splitPanes.Panel2Collapsed ? "Single-pane mode enabled (SOURCE only)." : "Dual-pane mode enabled (SOURCE & DESTINATION).");
+        }
+
+        private void BtnActOrientation_Click(object sender, EventArgs e)
+        {
+            splitPanes.SuspendLayout();
+            if (splitPanes.Orientation == Orientation.Vertical)
+            {
+                splitPanes.Orientation = Orientation.Horizontal;
+                btnActOrientation.Text = "Layout: Top / Bottom";
+                splitPanes.SplitterDistance = Math.Max(50, splitPanes.Height / 2);
+                NotifyStatus("Dual-pane orientation: Top (SOURCE) / Bottom (DESTINATION).");
+            }
+            else
+            {
+                splitPanes.Orientation = Orientation.Vertical;
+                btnActOrientation.Text = "Layout: Left / Right";
+                splitPanes.SplitterDistance = Math.Max(50, splitPanes.Width / 2);
+                NotifyStatus("Dual-pane orientation: Left (SOURCE) / Right (DESTINATION).");
+            }
+            splitPanes.ResumeLayout(true);
         }
 
         private void BtnActSend_Click(object sender, EventArgs e)
         {
             List<string> selected = GetSelectedFiles();
-            if (selected.Count > 0 && SendFilesRequested != null)
+            if (selected.Count == 0) return;
+
+            if (cboRemotePeer.SelectedItem is MainForm.DeviceItem)
             {
-                SendFilesRequested(selected.ToArray());
+                if (SendFilesRequested != null)
+                {
+                    SendFilesRequested(selected.ToArray());
+                }
+            }
+            else
+            {
+                string destFolder = AppSettings.Instance.SelectedDownloadFolder;
+                if (!string.IsNullOrEmpty(destFolder) && Directory.Exists(destFolder))
+                {
+                    int copied = 0;
+                    foreach (string f in selected)
+                    {
+                        try
+                        {
+                            string dest = Path.Combine(destFolder, Path.GetFileName(f));
+                            if (File.Exists(f) && f != dest)
+                            {
+                                File.Copy(f, dest, true);
+                                copied++;
+                            }
+                        }
+                        catch { }
+                    }
+                    PopulateFolder(listRemote, destFolder, null);
+                    NotifyStatus(string.Format("Transferred {0} file(s) from Source to Destination ({1}).", copied, destFolder));
+                }
             }
         }
 

@@ -36,6 +36,7 @@ namespace XpressShare.Core
             AuthSessionToken = string.Empty;
             PreferredInterface = "Auto";
             AutoOptimizeTransfers = true;
+            UiDensity = "Standard";
 
             Load();
         }
@@ -55,6 +56,7 @@ namespace XpressShare.Core
         public string AuthSessionToken { get; set; }
         public string PreferredInterface { get; set; }
         public bool AutoOptimizeTransfers { get; set; }
+        public string UiDensity { get; set; }
 
         public void Save()
         {
@@ -77,6 +79,7 @@ namespace XpressShare.Core
                     sb.AppendLine("AuthSessionToken=" + EscapeValue(AuthSessionToken));
                     sb.AppendLine("PreferredInterface=" + EscapeValue(PreferredInterface));
                     sb.AppendLine("AutoOptimizeTransfers=" + AutoOptimizeTransfers);
+                    sb.AppendLine("UiDensity=" + EscapeValue(UiDensity));
 
                     File.WriteAllText(_settingsFilePath, sb.ToString(), Encoding.UTF8);
                 }
@@ -174,6 +177,9 @@ namespace XpressShare.Core
                                 bool aot;
                                 if (bool.TryParse(value, out aot))
                                     AutoOptimizeTransfers = aot;
+                                break;
+                            case "UiDensity":
+                                UiDensity = UnescapeValue(value);
                                 break;
                         }
                     }
