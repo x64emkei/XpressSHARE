@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{43189C6E-A126-43DE-83F7-D54374316623}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>XpressShare</RootNamespace>
+    <AssemblyName>XpressSHARE</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <LangVersion>default</LangVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\AppLogger.cs" />
+    <Compile Include="Core\AppPaths.cs" />
+    <Compile Include="Core\AppSettings.cs" />
+    <Compile Include="Core\ServiceRegistry.cs" />
+    <Compile Include="Core\StartupManager.cs" />
+    <Compile Include="Core\StringHelper.cs" />
+    <Compile Include="Core\IconHelper.cs" />
+    <Compile Include="Core\ThemeManager.cs" />
+    <Compile Include="Forms\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InboxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InboxForm.Designer.cs">
+      <DependentUpon>InboxForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Controls\HomeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\HomeControl.Designer.cs">
+      <DependentUpon>HomeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Controls\ExplorerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\ExplorerControl.Designer.cs">
+      <DependentUpon>ExplorerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Controls\SendControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\SendControl.Designer.cs">
+      <DependentUpon>SendControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Controls\ReceiveControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\ReceiveControl.Designer.cs">
+      <DependentUpon>ReceiveControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Controls\TransfersControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\TransfersControl.Designer.cs">
+      <DependentUpon>TransfersControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Controls\DevicesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\DevicesControl.Designer.cs">
+      <DependentUpon>DevicesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Controls\SettingsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\SettingsControl.Designer.cs">
+      <DependentUpon>SettingsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RegistrationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RegistrationForm.Designer.cs">
+      <DependentUpon>RegistrationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SplashForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SplashForm.Designer.cs">
+      <DependentUpon>SplashForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DeviceIdentity.cs" />
+    <Compile Include="Models\ShareRequest.cs" />
+    <Compile Include="Models\TransferDirection.cs" />
+    <Compile Include="Models\TransferItem.cs" />
+    <Compile Include="Models\TransferSession.cs" />
+    <Compile Include="Models\TransferStatus.cs" />
+    <Compile Include="Models\TrustedDevice.cs" />
+    <Compile Include="Models\UserAccount.cs" />
+    <Compile Include="Network\ProtocolMessage.cs" />
+    <Compile Include="Network\ProtocolMessageType.cs" />
+    <Compile Include="Network\TransferProtocolHandler.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\PasswordHasher.cs" />
+    <Compile Include="Services\AccessPinService.cs" />
+    <Compile Include="Services\ConfigurationService.cs" />
+    <Compile Include="Services\DeviceIdentityService.cs" />
+    <Compile Include="Services\LanDiscoveryService.cs" />
+    <Compile Include="Services\LocalAccountService.cs" />
+    <Compile Include="Services\NotificationService.cs" />
+    <Compile Include="Services\PersistentQueueService.cs" />
+    <Compile Include="Services\TransferHistoryService.cs" />
+    <Compile Include="Services\TransferListenerService.cs" />
+    <Compile Include="Services\TransferManager.cs" />
+    <Compile Include="Services\TransferOptimizer.cs" />
+    <Compile Include="Services\TrustedDeviceService.cs" />
+    <Compile Include="Storage\SettingsRepository.cs" />
+    <Compile Include="Storage\TransferHistoryRepository.cs" />
+    <Compile Include="Storage\TrustedDeviceRepository.cs" />
+    <Compile Include="Storage\UserRepository.cs" />
+    <Compile Include="Devices\DeviceInfo.cs" />
+    <Compile Include="Devices\DevicePairing.cs" />
+    <Compile Include="Devices\TrustedDevice.cs" />
+    <Compile Include="Network\ConnectionManager.cs" />
+    <Compile Include="Network\HeartbeatManager.cs" />
+    <Compile Include="Network\NetworkCapabilities.cs" />
+    <Compile Include="Network\NetworkDiscovery.cs" />
+    <Compile Include="Network\TcpConnection.cs" />
+    <Compile Include="Protocol\XpxHeader.cs" />
+    <Compile Include="Protocol\XpxPacket.cs" />
+    <Compile Include="Protocol\XpxPacketFlags.cs" />
+    <Compile Include="Protocol\XpxPacketReader.cs" />
+    <Compile Include="Protocol\XpxPacketType.cs" />
+    <Compile Include="Protocol\XpxPacketWriter.cs" />
+    <Compile Include="Protocol\XpxProtocolConstants.cs" />
+    <Compile Include="Security\AesSession.cs" />
+    <Compile Include="Security\CryptoProvider.cs" />
+    <Compile Include="Security\HmacProvider.cs" />
+    <Compile Include="Security\KeyExchange.cs" />
+    <Compile Include="Security\PairingManager.cs" />
+    <Compile Include="Security\SessionManager.cs" />
+    <Compile Include="Tests\XpxProtocolTests.cs" />
+    <Compile Include="Transfers\FileReceiver.cs" />
+    <Compile Include="Transfers\FileSender.cs" />
+    <Compile Include="Transfers\TransferItem.cs" />
+    <Compile Include="Transfers\TransferManager.cs" />
+    <Compile Include="Transfers\TransferOptimizer.cs" />
+    <Compile Include="Transfers\TransferSession.cs" />
+    <Compile Include="Utilities\BufferPool.cs" />
+    <Compile Include="Utilities\Crc32.cs" />
+    <Compile Include="Utilities\PerformanceProfile.cs" />
+    <Compile Include="Utilities\SystemCapabilities.cs" />
+    <EmbeddedResource Include="Forms\InboxForm.resx">
+      <DependentUpon>InboxForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\HomeControl.resx">
+      <DependentUpon>HomeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\ExplorerControl.resx">
+      <DependentUpon>ExplorerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\SendControl.resx">
+      <DependentUpon>SendControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\ReceiveControl.resx">
+      <DependentUpon>ReceiveControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\TransfersControl.resx">
+      <DependentUpon>TransfersControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\DevicesControl.resx">
+      <DependentUpon>DevicesControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\SettingsControl.resx">
+      <DependentUpon>SettingsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RegistrationForm.resx">
+      <DependentUpon>RegistrationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SplashForm.resx">
+      <DependentUpon>SplashForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <None Include="Resources\XpressSHARE.png" />
+    <Content Include="splash.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

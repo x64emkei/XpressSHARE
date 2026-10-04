@@ -1,0 +1,22 @@
+============================================================
+XpressSHARE System & Transfer Diagnostics
+============================================================
+Operating System:     Windows 8
+.NET Framework:       2.0.50727.9179 (Compatible with .NET 3.5 on XP SP3)
+Processor:            Intel(R) Core(TM) i5-1035G1 CPU @ 1.00GHz
+CPU Logical Cores:    8 (ManyCore)
+Architecture:         x86 (32-bit)
+Physical Memory:      12,077 MB total (924 MB available)
+Storage Media:        HDD
+Network Adapter:      RTLGBE
+Connection Medium:    Ethernet
+Link Speed:           1000 Mbps
+XPX Protocol:         XPX/1 (Application-layer independent of SMB)
+Session Encryption:   AES-256-CBC + HMAC-SHA256 (Unique IV per packet)
+Key Exchange:         2048-bit Ephemeral RSA + Nonce exchange
+Performance Profile:  Balanced
+Profile Rationale:    8 CPU cores, 11.8 GB RAM, HDD, Ethernet
+Chunk Sizing:         128 KB chunks (Buffer Pool: 128 KB)
+Max Concurrency:      2 concurrent transfers
+Adaptive Compression:Enabled (Text/Logs only)
+============================================================
